@@ -1,7 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Variáveis CSS (Cores) */
+:root {
+  --color-light-beige: #F4E4D0;
+  --color-light-orange: #F4923A;
+  --color-red-orange: #C03619;
+  --color-maroon: #803033;
+  --color-coral-red: #D94545;
+}
+
+/* Variáveis CSS (Pesos da Fonte) */
+:root {
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+}
+
+/* Variáveis CSS (Cores do Texto) */
+:root {
+  --text-primary: #333333; /* Cinza escuro */
+  --text-secondary: #666666; /* Cinza médio */
+  --text-tertiary: #999999; /* Cinza claro */
+  --text-light: #CCCCCC; /* Cinza muito claro */
+  --text-white: #FFFFFF;
+  --text-black: #000000;
+  --text-accent: #D94545;
+}
+
+/* Estilos Base */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -74,3 +107,39 @@ body {
   min-height: 100vh;
 } */
 
+/* Tamanhos de Fonte */
+.text-xs {
+  font-size: 0.75rem; /* 12px */
+}
+
+.text-sm {
+  font-size: 0.875rem; /* 14px */
+}
+
+.text-base {
+  font-size: 1rem; /* 16px */
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+}
+
+.text-3xl {
+  font-size: 1.875rem; /* 30px */
+}
+
+.text-4xl {
+  font-size: 2.25rem; /* 36px */
+}
+
+.text-5xl {
+  font-size: 3rem; /* 48px */
+}
