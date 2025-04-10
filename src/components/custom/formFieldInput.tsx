@@ -6,7 +6,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
 
@@ -15,7 +15,7 @@ export default function FormFieldInput<T extends FieldValues>({
   label,
   control,
   className,
-  inputType = "text"
+  inputType = "text",
 }: {
   name: Path<T>;
   label: string;
@@ -39,4 +39,3 @@ export default function FormFieldInput<T extends FieldValues>({
     />
   );
 }
-
