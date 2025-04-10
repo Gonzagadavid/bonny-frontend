@@ -11,47 +11,47 @@ export enum Routes {
   USER_REGISTER_TERMS = "/users/register/terms",
   USER_REGISTER_FORMS = "/users/register/forms",
   LOGIN = "/login",
-  CONTACT = "/contact"
+  CONTACT = "/contact",
 }
 
 export const routesInfo: Record<Routes, { label: string }> = {
   [Routes.HOME]: {
-    label: "Início"
+    label: "Início",
   },
   [Routes.ABOUT]: {
-    label: "Quem Somos"
+    label: "Quem Somos",
   },
   [Routes.HELP]: {
-    label: "Como Ajudar"
+    label: "Como Ajudar",
   },
   [Routes.ADOPTION]: {
-    label: "Adoção"
+    label: "Adoção",
   },
   [Routes.DONATIONS]: {
-    label: "Doações"
+    label: "Doações",
   },
   [Routes.USER_REGISTER_PERSONAL_DATA]: {
-    label: "Dados Pessoais"
+    label: "Dados Pessoais",
   },
   [Routes.USER_REGISTER_FORMS]: {
-    label: "Formulários"
+    label: "Formulários",
   },
   [Routes.USER_REGISTER_TERMS]: {
-    label: "Termos"
+    label: "Termos",
   },
   [Routes.USER_REGISTER]: {
-    label: "Cadastro"
+    label: "Cadastro",
   },
   [Routes.LOGIN]: {
-    label: "Login"
+    label: "Entrar",
   },
   [Routes.CONTACT]: {
-   label: "Contato" 
+    label: "Contato",
   },
-  [Routes.SPONSORSHIP]: { 
-    label: "Apadrinhamento" 
+  [Routes.SPONSORSHIP]: {
+    label: "Apadrinhamento",
   },
   [Routes.SPONSORSHIP_FORM]: {
-    label: "Formulário de Apadrinhamento"
-  }
+    label: "Formulário de Apadrinhamento",
+  },
 };
