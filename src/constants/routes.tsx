@@ -1,3 +1,5 @@
+import { UserRole } from "./permissions";
+
 export enum Routes {
   HOME = "/",
   ABOUT = "/about",
@@ -14,44 +16,60 @@ export enum Routes {
   CONTACT = "/contact",
 }
 
-export const routesInfo: Record<Routes, { label: string }> = {
+export const routesInfo: Record<
+  Routes,
+  { label: string; permissions: UserRole }
+> = {
   [Routes.HOME]: {
     label: "Início",
+    permissions: UserRole.USER,
   },
   [Routes.ABOUT]: {
     label: "Quem Somos",
+    permissions: UserRole.USER,
   },
   [Routes.HELP]: {
     label: "Como Ajudar",
+    permissions: UserRole.USER,
   },
   [Routes.ADOPTION]: {
     label: "Adoção",
+    permissions: UserRole.USER,
   },
   [Routes.DONATIONS]: {
     label: "Doações",
+    permissions: UserRole.USER,
   },
   [Routes.USER_REGISTER_PERSONAL_DATA]: {
     label: "Dados Pessoais",
+    permissions: UserRole.USER,
   },
   [Routes.USER_REGISTER_FORMS]: {
     label: "Formulários",
+    permissions: UserRole.USER,
   },
   [Routes.USER_REGISTER_TERMS]: {
     label: "Termos",
+    permissions: UserRole.USER,
   },
   [Routes.USER_REGISTER]: {
     label: "Cadastro",
+    permissions: UserRole.USER,
   },
   [Routes.LOGIN]: {
     label: "Entrar",
+    permissions: UserRole.USER,
   },
   [Routes.CONTACT]: {
     label: "Contato",
+    permissions: UserRole.USER,
   },
   [Routes.SPONSORSHIP]: {
     label: "Apadrinhamento",
+    permissions: UserRole.USER,
   },
   [Routes.SPONSORSHIP_FORM]: {
     label: "Formulário de Apadrinhamento",
+    permissions: UserRole.USER,
   },
 };
