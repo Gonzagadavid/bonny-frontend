@@ -47,8 +47,6 @@ const availablePets = [
 
 export default function SponsorshipPage() {
   return (
-    <>
-      <Header />
 
     <div className="container mx-auto py-12 px-4">
       {/* Hero Section */}
@@ -135,6 +133,5 @@ export default function SponsorshipPage() {
         </Button>
       </section>
     </div>
-    </>
   );
 }

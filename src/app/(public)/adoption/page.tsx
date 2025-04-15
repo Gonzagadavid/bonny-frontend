@@ -20,8 +20,6 @@ const mockPets = [
 
 export default function AdoptionPage() {
   return (
-    <>
-    <Header />
 
     <div className="bg-white">
       <section className="bg-amber-100 py-16 text-center">
@@ -55,6 +53,5 @@ export default function AdoptionPage() {
         ))}
       </section>
     </div>
-    </>
   );
 }

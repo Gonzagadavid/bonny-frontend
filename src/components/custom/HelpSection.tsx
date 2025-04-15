@@ -10,7 +10,7 @@ export default function HelpSection() {
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {helpOptions.map((item) => (
           <Button key={item} asChild variant="outline" className="border-amber-600 text-amber-600">
-            <Link href={`/como-ajudar#${item.toLowerCase()}`}>{item}</Link>
+            <Link href={`${Routes.HOW_TO_HELP}#${toId(item)}`}>{item}</Link>
           </Button>
         ))}
       </div>

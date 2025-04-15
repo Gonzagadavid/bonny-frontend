@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import Header from '../components/custom/Header';
 import HeroSection from "@/components/custom/HeroSection";
 import AboutSection from "@/components/custom/AboutSection";
 import ProcessSection from "@/components/custom/ProcessSection";
@@ -11,7 +10,6 @@ import Footer from "@/components/custom/Footer";
 export default function Home() {
   return (
     <div>
-      <Header />
       <HeroSection />
       <AboutSection />
       <ProcessSection />

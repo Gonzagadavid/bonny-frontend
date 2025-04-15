@@ -1,10 +1,8 @@
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardTitle, CardContent} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Routes } from '../constants/routes';
 
-import Header from "@/components/custom/Header";
 
 const contactMethods = [
   {
@@ -27,25 +25,8 @@ const contactMethods = [
   }
 ];
 
-const faqs = [
-  {
-    question: "Quais são os horários de visita?",
-    answer: "Terça a domingo, das 10h às 16h."
-  },
-  {
-    question: "Preciso agendar para conhecer os animais?",
-    answer: "Sim, pedimos que agende com antecedência para melhor atendimento."
-  },
-  {
-    question: "Como posso ajudar além de doações?",
-    answer: "Precisamos de voluntários para passeios, banhos e eventos."
-  }
-];
-
 export default function ContactPage() {
   return (
-    <>
-      <Header />
 
       <div className="container mx-auto py-12 px-4">
         {/* Hero Section */}
@@ -118,6 +99,5 @@ export default function ContactPage() {
           </Card>
         </section>
       </div>
-    </>
   );
 }

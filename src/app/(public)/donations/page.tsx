@@ -1,12 +1,10 @@
 // src/app/doacoes/page.tsx
 import { donationData } from "@/data/donations";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import Header from "@/components/custom/Header";
 
 export default function DonationsPage() {
   return (
-    <>
-    <Header />
+
     <div className="container mx-auto py-12 px-4">
       {/* Seção PIX */}
       <section className="text-center mb-16">
@@ -36,6 +34,5 @@ export default function DonationsPage() {
         </div>
       </section>
     </div>
-    </>
   );
 }

@@ -3,16 +3,14 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Header from "@/components/custom/Header";
 
 export default function HomePage() {
   return (
-    <>
-    <Header />
+  
     <div className="bg-white">
       {/* Hero Section */}
       <section 
-        className="relative h-64 md:h-96 flex items-center justify-center bg-cover bg-center"
+        className="relative h-67 md:h-96 flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url('${aboutData.hero.backgroundImage}')` }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
@@ -121,6 +119,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-    </>
+
   );
 }

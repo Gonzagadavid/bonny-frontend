@@ -1,16 +1,10 @@
 import { helpOptions } from "@/data/help";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Header from "@/components/custom/Header";
-import { Routes } from '../constants/routes';
-
-
+import { Button } from "@/components/ui/button";
 
 export default function HowToHelpPage() {
   return (
-    <>
-      <Header />
 
     <div className="bg-white">
       {/* Hero Section */}
@@ -107,6 +101,5 @@ export default function HowToHelpPage() {
         </div>
       </section>
     </div>
-    </>
   );
 }

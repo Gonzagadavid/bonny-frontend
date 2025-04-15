@@ -15,7 +15,6 @@ const Header = () => {
 
   return (
     <header className="bg-white p-4 flex justify-between items-center font-montserrat shadow">
-      {/* Logo */}
       <div className="flex items-center mr-14">
         <Link href={Routes.HOME}>
           <Image 
@@ -28,7 +27,6 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Navegação Principal */}
       <nav className="hidden md:flex space-x-6 items-center">
         {mainRoutes.map((route) => (
           <Link
@@ -41,16 +39,15 @@ const Header = () => {
         ))}
       </nav>
 
-      {/* Botões de Ação */}
       <div className="flex space-x-3">
         <Button asChild variant="default" className="bg-accent hover:bg-accent/90">
           <Link href={Routes.DONATIONS}>
-            Faça uma doação
+          {routesInfo[Routes.DONATIONS].label}
           </Link>
         </Button>
         <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent/10">
           <Link href={Routes.LOGIN}>
-            Entrar
+          {routesInfo[Routes.LOGIN].label}
           </Link>
         </Button>
       </div>

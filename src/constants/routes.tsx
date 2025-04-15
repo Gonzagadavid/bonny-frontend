@@ -10,7 +10,7 @@ export enum Routes {
   USER_REGISTER_PERSONAL_DATA = "/users/register/personal-data",
   USER_REGISTER_TERMS = "/users/register/terms",
   USER_REGISTER_FORMS = "/users/register/forms",
-  LOGIN = "/entrar",
+  LOGIN = "/login",
   CONTACT = "/contact"
 }
 
@@ -43,7 +43,7 @@ export const routesInfo: Record<Routes, { label: string }> = {
     label: "Cadastro"
   },
   [Routes.LOGIN]: {
-    label: "Entrar"
+    label: "Login"
   },
   [Routes.CONTACT]: {
    label: "Contato" 
