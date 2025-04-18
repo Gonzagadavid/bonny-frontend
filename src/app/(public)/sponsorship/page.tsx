@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Routes } from "@/constants/routes";
-import Header from "@/components/custom/Header";
+import Header from "@/components/custom/PublicHeader";
 
 
 const sponsorBenefits = [

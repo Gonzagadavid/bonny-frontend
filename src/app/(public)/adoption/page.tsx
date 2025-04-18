@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Header from "@/components/custom/Header";
+import Header from "@/components/custom/PublicHeader";
 
 const mockPets = [
   {
