@@ -1,27 +1,31 @@
-import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import Link from "next/link";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Routes } from "@/constants/routes";
-import Header from "@/components/custom/PublicHeader";
-
 
 const sponsorBenefits = [
   {
     icon: "💌",
     title: "Atualizações Mensais",
-    description: "Receba fotos e relatórios sobre o seu afilhado"
+    description: "Receba fotos e relatórios sobre o seu afilhado",
   },
   {
     icon: "🏥",
     title: "Cobertura Veterinária",
-    description: "Seu apoio financia consultas, vacinas e tratamentos"
+    description: "Seu apoio financia consultas, vacinas e tratamentos",
   },
   {
     icon: "📅",
     title: "Visitas Agendadas",
-    description: "Possibilidade de visitar seu afilhado periodicamente"
-  }
+    description: "Possibilidade de visitar seu afilhado periodicamente",
+  },
 ];
 
 const availablePets = [
@@ -32,7 +36,7 @@ const availablePets = [
     breed: "SRD",
     description: "Resgatada com fratura na pata, agora totalmente recuperada!",
     image: "/pets/luna.jpg",
-    monthlyCost: "R$ 120/mês"
+    monthlyCost: "R$ 120/mês",
   },
   {
     id: 2,
@@ -41,13 +45,12 @@ const availablePets = [
     breed: "Pastor Alemão",
     description: "Idoso especial que precisa de medicação contínua",
     image: "/pets/thor.jpg",
-    monthlyCost: "R$ 180/mês"
-  }
+    monthlyCost: "R$ 180/mês",
+  },
 ];
 
 export default function SponsorshipPage() {
   return (
-
     <div className="container mx-auto py-12 px-4">
       {/* Hero Section */}
       <section className="text-center mb-16">
@@ -66,7 +69,10 @@ export default function SponsorshipPage() {
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           {sponsorBenefits.map((benefit, index) => (
-            <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+            <Card
+              key={index}
+              className="text-center p-6 hover:shadow-lg transition-shadow"
+            >
               <span className="text-4xl mb-4 block">{benefit.icon}</span>
               <CardTitle>{benefit.title}</CardTitle>
               <CardContent>
@@ -82,10 +88,13 @@ export default function SponsorshipPage() {
         <h2 className="text-2xl font-bold mb-8 text-center">
           Conheça Nossos Candidatos
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {availablePets.map((pet) => (
-            <Card key={pet.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card
+              key={pet.id}
+              className="overflow-hidden hover:shadow-lg transition-shadow"
+            >
               <div className="md:flex">
                 <div className="md:w-1/3 relative h-48 md:h-auto">
                   <Image

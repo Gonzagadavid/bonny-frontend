@@ -14,6 +14,7 @@ export enum Routes {
   USER_REGISTER_FORMS = "/users/register/forms",
   LOGIN = "/login",
   CONTACT = "/contact",
+  ADMIN = "/admin",
 }
 
 export const routesInfo: Record<
@@ -72,4 +73,10 @@ export const routesInfo: Record<
     label: "Formulário de Apadrinhamento",
     permissions: UserRole.USER,
   },
+  [Routes.ADMIN]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
 };
+
+export const adminRole = [UserRole.ADMIN, UserRole.VOLUNTEER];

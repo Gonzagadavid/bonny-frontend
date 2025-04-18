@@ -60,11 +60,7 @@ const Header = () => {
           </Link>
         </Button>
         {session.status === "authenticated" ? (
-          <LogoutButton
-            logoutCallback={() => {
-              session.update();
-            }}
-          />
+          <LogoutButton />
         ) : (
           <Button
             asChild

@@ -1,24 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import {
-  Home,
-  PawPrint,
-  Heart,
-  Users,
-  DollarSign,
-  Star,
-} from 'lucide-react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Home, PawPrint, Heart, Users, DollarSign, Star } from "lucide-react";
 
 const navigation = [
-  { href: '/admin/dashboard', label: 'Dashboard', icon: Home },
-  { href: '/admin/animals', label: 'Animais', icon: PawPrint },
-  { href: '/admin/adopters', label: 'Adotantes', icon: Heart },
-  { href: '/admin/donations', label: 'Doações', icon: DollarSign },
-  { href: '/admin/users', label: 'Usuários', icon: Users },
-  { href: '/admin/sponsorship', label: 'Apadrinhamentos', icon: Star },
+  { href: "/admin/dashboard", label: "Dashboard", icon: Home },
+  { href: "/admin/animals", label: "Animais", icon: PawPrint },
+  { href: "/admin/adopters", label: "Adotantes", icon: Heart },
+  { href: "/admin/donations", label: "Doações", icon: DollarSign },
+  { href: "/admin/users", label: "Usuários", icon: Users },
+  { href: "/admin/sponsorship", label: "Apadrinhamentos", icon: Star },
 ];
 
 export function Sidebar() {
@@ -38,10 +31,10 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                'group flex items-center px-3 py-2 text-sm font-medium rounded-md',
+                "group flex items-center px-3 py-2 text-sm font-medium rounded-md",
                 pathname === item.href
-                  ? 'bg-blue-500 text-white'
-                  : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                  ? "bg-blue-500 text-white"
+                  : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
               )}
             >
               <item.icon className="mr-2 h-4 w-4" />

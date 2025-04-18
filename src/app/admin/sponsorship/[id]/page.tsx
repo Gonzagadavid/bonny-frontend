@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'next/navigation';
+import React from "react";
+import { useParams } from "next/navigation";
 
 export default function SponsorshipDetailsPage() {
   const { id } = useParams();
