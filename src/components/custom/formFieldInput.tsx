@@ -9,12 +9,14 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import { ClipboardEventHandler } from "react";
 
 export default function FormFieldInput<T extends FieldValues>({
   name,
   label,
   control,
   className,
+  onPaste,
   inputType = "text",
 }: {
   name: Path<T>;
@@ -22,6 +24,7 @@ export default function FormFieldInput<T extends FieldValues>({
   control: Control<T>;
   className?: string;
   inputType?: HTMLInputElement["type"];
+  onPaste?: ClipboardEventHandler<HTMLInputElement>
 }) {
   return (
     <FormField
@@ -31,7 +34,7 @@ export default function FormFieldInput<T extends FieldValues>({
         <FormItem className={className}>
           <FormLabel>{label}</FormLabel>
           <FormControl>
-            <Input type={inputType} {...field} />
+            <Input type={inputType} onPaste={onPaste} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>
