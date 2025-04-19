@@ -8,10 +8,7 @@ export enum Routes {
   DONATIONS = "/donations",
   SPONSORSHIP = "/sponsorship",
   SPONSORSHIP_FORM = "/sponsorship/form",
-  USER_REGISTER = "/users/register",
-  USER_REGISTER_PERSONAL_DATA = "/users/register/personal-data",
-  USER_REGISTER_TERMS = "/users/register/terms",
-  USER_REGISTER_FORMS = "/users/register/forms",
+  USER_REGISTER = "/register",
   LOGIN = "/login",
   CONTACT = "/contact",
   ADMIN = "/admin",
@@ -39,18 +36,6 @@ export const routesInfo: Record<
   },
   [Routes.DONATIONS]: {
     label: "Doações",
-    permissions: UserRole.USER,
-  },
-  [Routes.USER_REGISTER_PERSONAL_DATA]: {
-    label: "Dados Pessoais",
-    permissions: UserRole.USER,
-  },
-  [Routes.USER_REGISTER_FORMS]: {
-    label: "Formulários",
-    permissions: UserRole.USER,
-  },
-  [Routes.USER_REGISTER_TERMS]: {
-    label: "Termos",
     permissions: UserRole.USER,
   },
   [Routes.USER_REGISTER]: {
