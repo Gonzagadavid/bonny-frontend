@@ -14,5 +14,5 @@ interface CreateUserData {
 }
 
 export async function createUser(userData: CreateUserData): Promise<void> {
-  await sendRequest(BackendRoutes.USERS, {arg: {data: userData}})
+  await sendRequest(BackendRoutes.USERS, { arg: { data: userData } });
 }

@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { useParams } from 'next/navigation';
+import React from "react";
+import { useParams } from "next/navigation";
 
 export default function EditAnimalsPage() {
   const { id } = useParams();

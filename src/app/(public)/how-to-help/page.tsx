@@ -1,16 +1,23 @@
 import { helpOptions } from "@/data/help";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function HowToHelpPage() {
   return (
-
     <div className="bg-white">
       {/* Hero Section */}
-      <section 
+      <section
         className="relative h-64 md:h-80 flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url('${helpOptions.hero.backgroundImage}')` }}
+        style={{
+          backgroundImage: `url('${helpOptions.hero.backgroundImage}')`,
+        }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center px-4">
@@ -39,9 +46,7 @@ export default function HowToHelpPage() {
               </CardContent>
               <CardFooter className="justify-center">
                 <Button asChild variant="outline" className="w-full">
-                  <Link href={option.link}>
-                    Saiba mais
-                  </Link>
+                  <Link href={option.link}>Saiba mais</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -56,9 +61,9 @@ export default function HowToHelpPage() {
             Quer ajudar de outra forma?
           </h2>
           <form className="space-y-4">
-            <input 
-              type="text" 
-              placeholder="Seu nome" 
+            <input
+              type="text"
+              placeholder="Seu nome"
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required
             />
@@ -74,7 +79,10 @@ export default function HowToHelpPage() {
               className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required
             ></textarea>
-            <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700">
+            <Button
+              type="submit"
+              className="w-full bg-amber-600 hover:bg-amber-700"
+            >
               Enviar Mensagem
             </Button>
           </form>
@@ -88,13 +96,11 @@ export default function HowToHelpPage() {
         </h2>
         <div className="space-y-4">
           {helpOptions.faqs.map((faq, index) => (
-            <details 
-              key={index} 
+            <details
+              key={index}
               className="border rounded-lg p-4 hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <summary className="font-semibold">
-                {faq.question}
-              </summary>
+              <summary className="font-semibold">{faq.question}</summary>
               <p className="mt-2 text-gray-600">{faq.answer}</p>
             </details>
           ))}

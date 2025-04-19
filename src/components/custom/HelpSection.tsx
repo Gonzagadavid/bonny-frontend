@@ -9,9 +9,14 @@ export default function HelpSection() {
       <h2 className="text-3xl font-bold mb-6">Como ajudar?</h2>
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {helpOptions.map((item) => (
-          <Button key={item} asChild variant="outline" className="border-amber-600 text-amber-600">
+          <Button
+            key={item}
+            asChild
+            variant="outline"
+            className="border-amber-600 text-amber-600"
+          >
             <Link href={`/how-to-help#${item.toLowerCase()}`}>{item}</Link>
-            </Button>
+          </Button>
         ))}
       </div>
     </section>

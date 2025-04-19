@@ -29,7 +29,6 @@ export const usePagination = (paths: Routes[]) => {
     toNextPage,
     toPreviousPage,
     toFirstPage,
-    toLastPage
+    toLastPage,
   };
 };
-

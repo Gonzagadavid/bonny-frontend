@@ -24,7 +24,7 @@ export default function FormFieldInput<T extends FieldValues>({
   control: Control<T>;
   className?: string;
   inputType?: HTMLInputElement["type"];
-  onPaste?: ClipboardEventHandler<HTMLInputElement>
+  onPaste?: ClipboardEventHandler<HTMLInputElement>;
 }) {
   return (
     <FormField

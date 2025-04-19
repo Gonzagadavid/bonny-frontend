@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-  
     <div className="bg-white">
       {/* Hero Section */}
-      <section 
+      <section
         className="relative h-67 md:h-96 flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url('${aboutData.hero.backgroundImage}')` }}
       >
@@ -34,7 +33,7 @@ export default function HomePage() {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
-        
+
         {/* Timeline */}
         <div className="mt-12 border-l-4 border-amber-500 pl-8 space-y-12">
           {aboutData.history.timeline.map((item, index) => (
@@ -49,39 +48,38 @@ export default function HomePage() {
       </section>
 
       {/* Patrocinadores */}
-<section className="bg-gray-50 py-16">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold mb-12 text-center text-amber-600">
-      Patrocinadores
-    </h2>
-    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {aboutData.sponsors?.map((sponsor, index) => (
-        <Card key={index}>
-          <CardHeader>
-            <CardTitle className="text-amber-600">
-              {sponsor.name}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{sponsor.description}</p>
-            {sponsor.logo && (
-              <div className="mt-4">
-                <Image
-                  src={sponsor.logo}
-                  alt={`Logo de ${sponsor.name}`}
-                  width={120}
-                  height={60}
-                  className="mx-auto"
-                />
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </div>
-</section>
-
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center text-amber-600">
+            Patrocinadores
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {aboutData.sponsors?.map((sponsor, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle className="text-amber-600">
+                    {sponsor.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{sponsor.description}</p>
+                  {sponsor.logo && (
+                    <div className="mt-4">
+                      <Image
+                        src={sponsor.logo}
+                        alt={`Logo de ${sponsor.name}`}
+                        width={120}
+                        height={60}
+                        className="mx-auto"
+                      />
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Equipe */}
       <section className="container mx-auto py-16 px-4">
@@ -108,17 +106,12 @@ export default function HomePage() {
       {/* CTA */}
       <section className="bg-amber-600 text-white py-12 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-6">
-            {aboutData.cta.title}
-          </h2>
+          <h2 className="text-2xl font-bold mb-6">{aboutData.cta.title}</h2>
           <Button asChild variant="secondary">
-            <Link href={aboutData.cta.link}>
-              {aboutData.cta.buttonText}
-            </Link>
+            <Link href={aboutData.cta.link}>{aboutData.cta.buttonText}</Link>
           </Button>
         </div>
       </section>
     </div>
-
   );
 }

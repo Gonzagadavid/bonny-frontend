@@ -1,4 +1,10 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Header from "@/components/custom/PublicHeader";
@@ -20,12 +26,12 @@ const mockPets = [
 
 export default function AdoptionPage() {
   return (
-
     <div className="bg-white">
       <section className="bg-amber-100 py-16 text-center">
         <h1 className="text-4xl font-bold mb-4">Adoção Responsável</h1>
         <p className="text-lg max-w-2xl mx-auto">
-          Adotar é um ato de amor. Conheça nossos animais disponíveis e ofereça um lar cheio de carinho.
+          Adotar é um ato de amor. Conheça nossos animais disponíveis e ofereça
+          um lar cheio de carinho.
         </p>
       </section>
 
@@ -47,7 +53,9 @@ export default function AdoptionPage() {
               <p className="mt-2 text-gray-700">{pet.description}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-amber-600 hover:bg-amber-700">Quero Adotar</Button>
+              <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                Quero Adotar
+              </Button>
             </CardFooter>
           </Card>
         ))}

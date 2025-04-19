@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,22 +16,22 @@
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
-  
+
   /* Cores */
-  --color-light-beige: #F4E4D0;
-  --color-light-orange: #F4923A;
-  --color-red-orange: #C03619;
+  --color-light-beige: #f4e4d0;
+  --color-light-orange: #f4923a;
+  --color-red-orange: #c03619;
   --color-maroon: #803033;
-  --color-coral-red: #D94545;
+  --color-coral-red: #d94545;
 
   /* Cores do Texto */
   --text-primary: #333333; /* Cinza escuro */
   --text-secondary: #666666; /* Cinza médio */
   --text-tertiary: #999999; /* Cinza claro */
-  --text-light: #CCCCCC; /* Cinza muito claro */
-  --text-white: #FFFFFF;
+  --text-light: #cccccc; /* Cinza muito claro */
+  --text-white: #ffffff;
   --text-black: #000000;
-  --text-accent: #D94545;
+  --text-accent: #d94545;
 
   /* Pesos da Fonte */
   --font-weight-light: 300;
@@ -96,7 +96,6 @@
   --chart-5: 340 75% 55%;
 }
 
-
 @layer base {
   body {
     @apply antialiased;
@@ -104,11 +103,11 @@
   .card-animal {
     @apply transition-all hover:shadow-lg hover:-translate-y-1;
   }
-  
+
   .card-featured {
     @apply border-2 border-amber-500;
   }
-  
+
   .card-adopted {
     @apply opacity-75 bg-gray-50;
   }

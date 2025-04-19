@@ -9,15 +9,23 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Projeto Bonny</h3>
             <p>
-              O <b>Projeto Bonny</b> resgata, cuida e encontra lares amorosos para animais em situação de risco.
-              Junte-se a nós e transforme vidas!
+              O <b>Projeto Bonny</b> resgata, cuida e encontra lares amorosos
+              para animais em situação de risco. Junte-se a nós e transforme
+              vidas!
             </p>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Contato</h4>
-            <p><b>Email:</b> projetobonny@gmail.com</p>
-            <p><b>Instagram:</b> @projetobonny</p>
-            <p><b>Horário:</b> segunda a sexta (8h às 16h) - sábado (8h às 12h) - domingo (fechado)</p>
+            <p>
+              <b>Email:</b> projetobonny@gmail.com
+            </p>
+            <p>
+              <b>Instagram:</b> @projetobonny
+            </p>
+            <p>
+              <b>Horário:</b> segunda a sexta (8h às 16h) - sábado (8h às 12h) -
+              domingo (fechado)
+            </p>
           </div>
           <div>
             <Button asChild variant="link" className="text-white">
