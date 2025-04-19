@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import * as React from "react";
 
 const TOAST_LIMIT = 5;
-const TOAST_REMOVE_DELAY = 5000;
 
 type ToastActionElement = React.ReactElement<any, string>;
 
@@ -137,7 +137,7 @@ function toast(opts: ToastOptions) {
       ...opts,
       id,
       open: true,
-      // @ts-ignore
+      // @ts-expect-error: new property
       onOpenChange: (open: boolean) => {
         if (!open) dismiss();
       },

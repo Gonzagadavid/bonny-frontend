@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Routes, routesInfo } from "@/constants/routes";
+import { Routes } from "@/constants/routes";
 
 export default function HeroSection() {
   return (

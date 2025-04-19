@@ -4,7 +4,7 @@ import { Routes } from "@/constants/routes";
 import { AuthError } from "next-auth";
 
 export async function authenticate(
-  prevState: string | undefined,
+  _prevState: string | undefined,
   formData: FormData,
 ) {
   try {
