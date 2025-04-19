@@ -1,4 +1,5 @@
-// app/admin/adotantes/[id]/edit/page.tsx
+'use client'
+
 import React from 'react';
 import { useParams } from 'next/navigation';
 
