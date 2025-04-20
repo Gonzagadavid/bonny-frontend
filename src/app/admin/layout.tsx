@@ -11,11 +11,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className="w-full flex flex-col ">
         <Navbar />
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-white p-6">
-          {children}
-        </main>
+        <main className="w-full  bg-white">{children}</main>
       </div>
     </div>
   );

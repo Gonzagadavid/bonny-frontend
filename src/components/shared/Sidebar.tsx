@@ -18,7 +18,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden md:flex flex-col w-64 border-r bg-gray-50 h-full">
+    <div className="fixed left-0 hidden md:flex flex-col w-64 border-r bg-gray-50 h-full">
       <div className="p-6 flex-shrink-0">
         <Link href="/admin/dashboard" className="font-semibold text-lg">
           Painel Admin

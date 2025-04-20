@@ -7,10 +7,8 @@ import LogoutButton from "../custom/logoutButton";
 export function Navbar() {
   const { data: session } = useSession();
 
-  console.log(session);
-
   return (
-    <div className="sticky top-0 z-10 bg-white border-b h-16 flex items-center justify-end px-6">
+    <div className="sticky top-0 left-64 z-10 bg-white border-b h-16 flex items-center justify-end p-6">
       <div className="flex-grow text-lg font-semibold">
         Painel Administrativo
       </div>
