@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import Image from "next/image";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 
 interface Animal {
   _id: string;
@@ -42,10 +42,14 @@ function AnimalCard({ animal }: AnimalCardProps) {
         <p className="text-sm text-muted-foreground">{animal.specie}</p>
         <p className="text-sm text-muted-foreground">{animal.age}</p>
         <p className="text-sm text-muted-foreground">Status: {animal.status}</p>
-        <p className="text-sm text-muted-foreground">Entrou em: {animal.entryDate}</p>
+        <p className="text-sm text-muted-foreground">
+          Entrou em: {animal.entryDate}
+        </p>
       </CardContent>
       <CardFooter className="p-4">
-        <Button variant="outline" size="sm">Ver Detalhes</Button>
+        <Button variant="outline" size="sm">
+          Ver Detalhes
+        </Button>
       </CardFooter>
     </Card>
   );
