@@ -1,8 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
-import { Bell } from "lucide-react";
-import LogoutButton from "../custom/logoutButton";
+import LogoutButton from "../../../components/custom/logoutButton";
 
 export function Navbar() {
   const { data: session } = useSession();
@@ -12,9 +11,6 @@ export function Navbar() {
       <div className="flex-grow text-lg font-semibold">
         Painel Administrativo
       </div>
-      <button className="mr-4">
-        <Bell size={20} />
-      </button>
       {session?.user ? (
         <div className="flex items-center space-x-2">
           <span>{session.user?.name}</span>

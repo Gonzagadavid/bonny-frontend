@@ -7,7 +7,9 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Header from "@/components/custom/publicHeader";
 
+//Excluir depois
 const mockPets = [
   {
     name: "Luna",
