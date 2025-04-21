@@ -7,24 +7,10 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { listAvailableAnimals } from "./_lib/listAvailableAnimals";
 
-//Excluir depois
-const mockPets = [
-  {
-    name: "Luna",
-    age: "2 anos",
-    description: "Muito dócil, adora crianças.",
-    image: "/pets/luna.jpg",
-  },
-  {
-    name: "Thor",
-    age: "3 anos",
-    description: "Protetor e carinhoso.",
-    image: "/pets/thor.jpg",
-  },
-];
-
-export default function AdoptionPage() {
+export default async function AdoptionPage() {
+  const availablePets = await listAvailableAnimals();
   return (
     <div className="bg-white">
       <section className="bg-amber-100 py-16 text-center">
@@ -36,11 +22,11 @@ export default function AdoptionPage() {
       </section>
 
       <section className="container mx-auto py-12 px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {mockPets.map((pet, index) => (
+        {availablePets.map((pet, index) => (
           <Card key={index} className="overflow-hidden">
             <CardHeader className="p-0">
               <Image
-                src={pet.image}
+                src={pet.imageProfile}
                 alt={`Foto de ${pet.name}`}
                 width={400}
                 height={300}
@@ -49,8 +35,8 @@ export default function AdoptionPage() {
             </CardHeader>
             <CardContent>
               <CardTitle>{pet.name}</CardTitle>
-              <p className="text-sm text-gray-600">{pet.age}</p>
-              <p className="mt-2 text-gray-700">{pet.description}</p>
+              <p className="text-sm text-gray-600">{pet.age} anos</p>
+              <p className="mt-2 text-gray-700">{pet.history}</p>
             </CardContent>
             <CardFooter>
               <Button className="w-full bg-amber-600 hover:bg-amber-700">
