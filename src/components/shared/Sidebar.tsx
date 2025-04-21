@@ -3,7 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Home, PawPrint, Heart, Users, DollarSign, Star } from "lucide-react";
+import {
+  Home,
+  PawPrint,
+  Heart,
+  Users,
+  DollarSign,
+  Star,
+  LayoutTemplate,
+} from "lucide-react";
 import { Routes } from "@/constants/routes";
 
 const navigation = [
@@ -13,6 +21,7 @@ const navigation = [
   { href: "/admin/donations", label: "Doações", icon: DollarSign },
   { href: Routes.ADMIN_USERS, label: "Usuários", icon: Users },
   { href: "/admin/sponsorship", label: "Apadrinhamentos", icon: Star },
+  { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },
 ];
 
 export function Sidebar() {

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
 import LogoutButton from "./logoutButton";
 import { useEffect } from "react";
+import { checkPermissions, UserRole } from "@/constants/permissions";
 
 const Header = () => {
   const session = useSession();
@@ -18,6 +19,14 @@ const Header = () => {
     Routes.HELP,
     Routes.CONTACT,
   ];
+
+  const isAdmin =
+    !!session.data?.user.role &&
+    checkPermissions(UserRole.VOLUNTEER, session.data.user.role);
+
+  if (isAdmin) {
+    mainRoutes.push(Routes.ADMIN);
+  }
 
   useEffect(() => {
     session.update();
