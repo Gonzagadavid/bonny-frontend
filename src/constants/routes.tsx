@@ -12,6 +12,7 @@ export enum Routes {
   LOGIN = "/login",
   CONTACT = "/contact",
   ADMIN = "/admin",
+  ADMIN_USERS = "/admin/users",
 }
 
 export const routesInfo: Record<
@@ -59,6 +60,10 @@ export const routesInfo: Record<
     permissions: UserRole.USER,
   },
   [Routes.ADMIN]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
+  [Routes.ADMIN_USERS]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },

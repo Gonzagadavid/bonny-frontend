@@ -1,11 +1,10 @@
 "use server";
 
 import { auth } from "@/app/api/auth/auth";
-import { BackendRoutes } from "@/constants/backend-routes";
 
 const baseUrlApi = process.env.BASE_URI_API;
 
-export async function fetcher(route: BackendRoutes) {
+export async function fetcher(route: string) {
   const session = await auth();
   const authorization = `Bearer  ${session?.token?.accessToken}`;
   const res = await fetch(`${baseUrlApi}${route}`, {
