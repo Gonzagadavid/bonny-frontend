@@ -60,7 +60,7 @@ export const routesInfo: Record<
     permissions: UserRole.USER,
   },
   [Routes.ADMIN]: {
-    label: "",
+    label: "Painel Administrativo",
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.ADMIN_USERS]: {
