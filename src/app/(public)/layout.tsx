@@ -1,6 +1,6 @@
 "use client";
 
-import PublicHeader from "@/components/custom/PublicHeader";
+import Header from "@/components/custom/publicHeader";
 
 interface PublicLayoutProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface PublicLayoutProps {
 export default function PublicLayout({ children }: PublicLayoutProps) {
   return (
     <>
-      <PublicHeader />
+      <Header />
       <main className="flex-1">{children}</main>
     </>
   );

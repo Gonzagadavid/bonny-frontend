@@ -1,7 +1,7 @@
 "use client";
 
-import { Sidebar } from "@/components/shared/Sidebar";
-import { Navbar } from "@/components/shared/Navbar";
+import { Sidebar } from "./_components/sideBarAdmin";
+import { Navbar } from "./_components/navBarAdmin";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
