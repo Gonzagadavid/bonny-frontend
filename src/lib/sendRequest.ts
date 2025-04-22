@@ -1,12 +1,11 @@
 "use server";
 
 import { auth } from "@/app/api/auth/auth";
-import { BackendRoutes } from "@/constants/backend-routes";
 
 const baseUrlApi = process.env.BASE_URI_API;
 
 export async function sendRequest(
-  route: BackendRoutes,
+  route: string,
   { arg }: { arg: RequestInit & { data: unknown } },
 ) {
   const session = await auth();

@@ -6,6 +6,8 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Animal } from "../_lib/listAnimals";
+import Link from "next/link";
+import { Routes } from "@/constants/routes";
 
 interface AnimalCardProps {
   animal: Animal;
@@ -31,7 +33,9 @@ function AnimalCard({ animal }: AnimalCardProps) {
       </CardContent>
       <CardFooter className="p-4">
         <Button variant="outline" size="sm">
-          Ver Detalhes
+          <Link href={`${Routes.ADMIN_ANIMALS}/animal-details/${animal._id}`}>
+            Ver Detalhes
+          </Link>
         </Button>
       </CardFooter>
     </Card>

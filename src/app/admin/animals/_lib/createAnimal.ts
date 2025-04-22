@@ -3,7 +3,7 @@
 import { BackendRoutes } from "@/constants/backend-routes";
 import { sendRequest } from "@/lib/sendRequest";
 
-interface CreateAnimalData {
+export interface CreateAnimalData {
   name: string;
   age: number;
   size: string;
