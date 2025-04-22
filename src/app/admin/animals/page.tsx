@@ -1,6 +1,9 @@
 import React from "react";
 import AnimalCard from "./_components/animalCard";
 import { listAnimal } from "./_lib/listAnimals";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Routes } from "@/constants/routes";
 
 export default async function AnimalsPage() {
   const animals = await listAnimal();
@@ -12,6 +15,11 @@ export default async function AnimalsPage() {
           <AnimalCard key={dog._id} animal={dog} />
         ))}
       </div>
+      <Button className="fixed bottom-10 right-10">
+        <Link href={Routes.ADMIN_ANIMALS_REGISTER}>
+          Adicionar um novo animal
+        </Link>
+      </Button>
     </div>
   );
 }
