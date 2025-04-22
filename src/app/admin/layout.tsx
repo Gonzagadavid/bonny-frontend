@@ -13,7 +13,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <Sidebar />
       <div className="w-full flex flex-col ">
         <Navbar />
-        <main className="w-full  bg-white">{children}</main>
+        <main className="w-full h-full bg-white">{children}</main>
       </div>
     </div>
   );
