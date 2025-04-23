@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
 
 export default {
@@ -58,13 +59,13 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       animation: {
-        'fade-in': 'fadeIn 1s ease-out',
-      },    
+        "fade-in": "fadeIn 1s ease-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

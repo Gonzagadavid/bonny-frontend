@@ -42,7 +42,7 @@ const Header = () => {
   }, []);
 
   return (
-  <header className="bg-white sticky top-0 z-50 px-4 py-3 shadow-md flex items-center justify-between font-montserrat"> 
+    <header className="bg-white sticky top-0 z-50 px-4 py-3 shadow-md flex items-center justify-between font-montserrat">
       <div className="flex items-center mr-6">
         <Link href={Routes.HOME}>
           <Image
@@ -57,29 +57,30 @@ const Header = () => {
       </div>
 
       <nav className="hidden md:flex items-center space-x-6">
-      {mainRoutes.map((route) => (
-        <Link
-          key={route}
-          href={route}
-          className="text-gray-700 text-sm font-medium hover:text-accent transition-colors duration-200"
-        >
-          {routesInfo[route].label}
-        </Link>
-      ))}
+        {mainRoutes.map((route) => (
+          <Link
+            key={route}
+            href={route}
+            className="text-gray-700 text-sm font-medium hover:text-accent transition-colors duration-200"
+          >
+            {routesInfo[route].label}
+          </Link>
+        ))}
       </nav>
 
-
       <div className="flex items-center space-x-3">
-        <Dialog open={isDonationModalOpen} onOpenChange={setIsDonationModalOpen}>
+        <Dialog
+          open={isDonationModalOpen}
+          onOpenChange={setIsDonationModalOpen}
+        >
           <DialogTrigger asChild>
-          <Button
-            onClick={() => setIsDonationModalOpen(true)}
-            className="bg-[var(--color-coral-red)] text-white font-semibold flex items-center gap-2 px-4 py-2 rounded-md shadow-lg transition-all animate-pulse hover:animate-none"
-          >
-            <HeartHandshake className="w-5 h-5" />
-            Doar
-          </Button>
-
+            <Button
+              onClick={() => setIsDonationModalOpen(true)}
+              className="bg-[var(--color-coral-red)] text-white font-semibold flex items-center gap-2 px-4 py-2 rounded-md shadow-lg transition-all animate-pulse hover:animate-none"
+            >
+              <HeartHandshake className="w-5 h-5" />
+              Doar
+            </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[425px]">
             <DialogHeader>
@@ -114,7 +115,9 @@ const Header = () => {
                 {/* Informações adicionais */}
                 <div className="text-center text-sm text-gray-600 mt-4">
                   <p>Toda doação nos ajuda a resgatar mais animais!</p>
-                  <p className="mt-1">Projeto Bonny - CNPJ: 47.641.646/0001-11</p>
+                  <p className="mt-1">
+                    Projeto Bonny - CNPJ: 47.641.646/0001-11
+                  </p>
                 </div>
               </div>
             </div>
