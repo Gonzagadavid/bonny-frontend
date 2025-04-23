@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/custom/footer";
 
 export default function HowToHelpPage() {
   return (
@@ -106,6 +107,7 @@ export default function HowToHelpPage() {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
