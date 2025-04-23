@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sua ONG",
+  title: "Projeto Bonny",
   description: "Website da ONG",
 };
 

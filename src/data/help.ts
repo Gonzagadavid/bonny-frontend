@@ -16,14 +16,14 @@ export const helpOptions = {
     {
       title: "Apadrinhamento",
       description: "Ajuda mensal para custear um animal específico.",
-      icon: "💖",
-      link: Routes.SPONSORSHIP,
+      icon: "🐶",
+      link: Routes.ADOPTION,
     },
     {
       title: "Doações Financeiras",
       description: "Qualquer valor faz diferença em nossos resgates.",
       icon: "💰",
-      link: Routes.DONATIONS,
+      link: Routes.HELP,
     },
     {
       title: "Voluntariado",

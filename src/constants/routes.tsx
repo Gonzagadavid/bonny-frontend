@@ -37,7 +37,7 @@ export const routesInfo: Record<
     permissions: UserRole.USER,
   },
   [Routes.ADOPTION]: {
-    label: "Adoção",
+    label: "Adoção e Apadrinhamento",
     permissions: UserRole.USER,
   },
   [Routes.DONATIONS]: {
