@@ -13,8 +13,11 @@ export enum Routes {
   CONTACT = "/contact",
   ADMIN = "/admin",
   ADMIN_USERS = "/admin/users",
+  ADMIN_USER_DETAILS = "/admin/users/user-details",
   ADMIN_ANIMALS = "/admin/animals",
   ADMIN_ANIMALS_REGISTER = "/admin/animals/new",
+  ADMIN_FORMS = "/admin/forms",
+  ADMIN_FORM_DETAILS = "/admin/forms/form-details",
 }
 
 export const routesInfo: Record<
@@ -69,11 +72,23 @@ export const routesInfo: Record<
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
+  [Routes.ADMIN_USER_DETAILS]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
   [Routes.ADMIN_ANIMALS]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.ADMIN_ANIMALS_REGISTER]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
+  [Routes.ADMIN_FORMS]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
+  [Routes.ADMIN_FORM_DETAILS]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },

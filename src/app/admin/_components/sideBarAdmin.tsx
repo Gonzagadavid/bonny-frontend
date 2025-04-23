@@ -11,6 +11,7 @@ import {
   DollarSign,
   Star,
   LayoutTemplate,
+  LetterText,
 } from "lucide-react";
 import { Routes } from "@/constants/routes";
 
@@ -22,6 +23,7 @@ const navigation = [
   { href: Routes.ADMIN_USERS, label: "Usuários", icon: Users },
   { href: "/admin/sponsorship", label: "Apadrinhamentos", icon: Star },
   { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },
+  { href: Routes.ADMIN_FORMS, label: "Formulários", icon: LetterText },
 ];
 
 export function Sidebar() {

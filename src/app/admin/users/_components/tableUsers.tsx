@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import { BackendRoutes } from "@/constants/backend-routes";
+import { Routes } from "@/constants/routes";
 
 export default async function TableUsers() {
   const users = await listUsers();
@@ -34,7 +34,7 @@ export default async function TableUsers() {
               <TableCell>{user.email}</TableCell>
               <TableCell className="text-right">{user.cellPhone}</TableCell>
               <TableCell className="text-right">
-                <Link href={`${BackendRoutes.USER_DETAILS}/${user._id}`}>
+                <Link href={`${Routes.ADMIN_USER_DETAILS}/${user._id}`}>
                   Ver detalhes
                 </Link>
               </TableCell>
