@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Heart, Mail, Clock, Home, PawPrint, Info, Phone } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Routes } from "@/constants/routes";
-import { PawPattern } from "./pawPattern";
 
 export default function Footer() {
   return (
@@ -14,8 +13,8 @@ export default function Footer() {
           {/* Sobre */}
           <div className="space-y-3 text-center md:text-left max-w-xs mx-auto md:mx-0">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <Image 
-                src="/images/logotipo.webp" 
+              <Image
+                src="/images/logotipo.webp"
                 alt="Logo Projeto Bonny"
                 width={50}
                 height={50}
@@ -99,7 +98,10 @@ export default function Footer() {
 
         {/* Rodapé */}
         <div className="mt-8 pt-6 border-t border-white border-opacity-20 text-center text-[--text-white] text-base">
-          <p>© {new Date().getFullYear()} Projeto Bonny – Todos os direitos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} Projeto Bonny – Todos os direitos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>
