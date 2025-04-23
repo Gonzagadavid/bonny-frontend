@@ -45,7 +45,7 @@ export default function AboutSection() {
                 </svg>
                 <p className="relative">
                   {
-                    "Adotar é mais do que oferecer um lar — é dar uma segunda\n chance a um coração que já conheceu o abandono."
+                    '"Adotar é mais do que oferecer um lar — é dar uma segunda\n chance a um coração que já conheceu o abandono."'
                   }
                 </p>
               </blockquote>
