@@ -31,8 +31,6 @@ export function FormCard({ form }: { form: Form }) {
     }
   };
 
-  console.log(form);
-
   return (
     <Card key={form._id}>
       <div className="flex justify-end">
