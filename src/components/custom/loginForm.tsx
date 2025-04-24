@@ -38,7 +38,7 @@ export default function LoginForm() {
           <div className="flex items-center justify-center p-3">
             <Link href={Routes.HOME}>
               <Image
-                src="/logotipo.webp"
+                src="/images/logotipo.webp"
                 alt="Logo Bonny"
                 width={80}
                 height={80}
