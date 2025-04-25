@@ -27,7 +27,7 @@ const HelpOptions = () => {
       <section className="container mx-auto px-4 pb-16">
         {/* Título da seção */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 mt-6">
             Como Você Pode Ajudar
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto text-lg">

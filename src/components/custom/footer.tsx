@@ -13,8 +13,8 @@ export default function Footer() {
           {/* Sobre */}
           <div className="space-y-3 text-center md:text-left max-w-xs mx-auto md:mx-0">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <Image
-                src="/images/logotipo.webp"
+              <Image 
+                src="/images/logotipo-bonny.svg" 
                 alt="Logo Projeto Bonny"
                 width={50}
                 height={50}

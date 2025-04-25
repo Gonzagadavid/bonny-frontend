@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
-import { useToast } from "@/hooks/use-toast"; // Importando o hook corretamente
+import { useToast } from "@/hooks/use-toast";
 
 export const CopyToClipboard = ({ text }: { text: string }) => {
-  const { toast } = useToast(); // Usando o hook para acessar a função toast
+  const { toast } = useToast();
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text);
