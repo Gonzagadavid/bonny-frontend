@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Texto no lado esquerdo */}
-          <div className="lg:w-1/2 text-left">
+          <div className="lg:w-1/2 text-justify">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-amber-600 animate-fade-in">
               O Projeto Bonny
             </h2>
@@ -45,7 +45,7 @@ export default function AboutSection() {
                 </svg>
                 <p className="relative">
                   {
-                    '"Adotar é mais do que oferecer um lar — é dar uma segunda\n chance a um coração que já conheceu o abandono."'
+                    '"Adotar é mais do que oferecer um lar — é dar uma segunda\n chance a um coração que já conheceu o abandono." 🐾❤️'
                   }
                 </p>
               </blockquote>

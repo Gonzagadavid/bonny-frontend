@@ -46,7 +46,7 @@ const Header = () => {
       <div className="flex items-center mr-6">
         <Link href={Routes.HOME}>
           <Image
-            src="/logotipo.webp"
+            src="/images/logotipo-bonny.svg"
             alt="Logo Bonny"
             width={80}
             height={80}
