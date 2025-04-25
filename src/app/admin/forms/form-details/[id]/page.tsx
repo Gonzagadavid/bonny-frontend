@@ -1,12 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { getFormById } from "../../_lib/getFormById";
 import { Badge } from "@/components/ui/badge";
-
-const answerTypeLabel = {
-  ALTERNATIVE: "Altenativa",
-  MULTIPLE: "Multipla Escolha",
-  TEXT: "Dissertativa",
-};
+import { answerTypeLabel } from "@/constants/labels";
 
 export default async function UserDetails({
   params,
