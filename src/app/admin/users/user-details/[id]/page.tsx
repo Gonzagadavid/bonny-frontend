@@ -1,6 +1,9 @@
 import { DonationList } from "../../_components/donationList";
+import { FormAnswerByUser } from "../../_components/formAnswerByUser";
 import { SponsorshipList } from "../../_components/sponsorshipList";
 import { UserInfo } from "../../_components/userInfo";
+import { getFormAnswerByUser } from "../../_lib/getFormAnswerByUser";
+import { getFormById } from "../../_lib/getFormById";
 import { getUser } from "../../_lib/getUser";
 import { listDonationByUser } from "../../_lib/listDonationByUser";
 import { listSponsorshipByUser } from "../../_lib/listSponsorshipByUser";
@@ -14,6 +17,8 @@ export default async function UserDetails({
   const userInfo = await getUser(id);
   const sponsorships = await listSponsorshipByUser(id);
   const donations = await listDonationByUser(id);
+  const formAnswers = await getFormAnswerByUser(id);
+  const form = await getFormById(formAnswers?.formVersionId);
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -25,6 +30,7 @@ export default async function UserDetails({
           <UserInfo user={userInfo} />
           <SponsorshipList sponsorships={sponsorships} />
           <DonationList donations={donations} />
+          <FormAnswerByUser form={form} formAnswers={formAnswers} />
         </div>
       </section>
     </div>
