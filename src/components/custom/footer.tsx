@@ -10,11 +10,10 @@ export default function Footer() {
     <footer className="bg-[--color-red-orange] text-[--text-white] py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12">
-          {/* Sobre */}
           <div className="space-y-3 text-center md:text-left max-w-xs mx-auto md:mx-0">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <Image 
-                src="/images/logotipo-bonny.svg" 
+              <Image
+                src="/images/logotipo-bonny.svg"
                 alt="Logo Projeto Bonny"
                 width={50}
                 height={50}
@@ -36,9 +35,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navegação e Contato */}
           <div className="flex flex-col sm:flex-row justify-center gap-8 md:gap-12">
-            {/* Navegação */}
             <div className="text-center md:text-left">
               <h4 className="font-semibold text-md mb-3 flex items-center justify-center md:justify-start gap-2">
                 <Heart className="w-6 h-6 text-amber-600" />
@@ -63,7 +60,6 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contato */}
             <div className="text-center md:text-left">
               <h4 className="font-semibold text-md mb-3 flex items-center justify-center md:justify-start gap-2">
                 <Phone className="w-6 h-6  text-amber-600" />
