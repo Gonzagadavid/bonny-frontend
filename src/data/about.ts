@@ -8,16 +8,20 @@ export const aboutData = {
     {
       image: "/images/animals/cachorro2.jpg",
       title: "Apoie a Vida, Apoie a Adoção",
-      subtitle: "ransforme o destino de um animal. Sua adoção é a chave para um futuro cheio de carinho e proteção"
+      subtitle:
+        "ransforme o destino de um animal. Sua adoção é a chave para um futuro cheio de carinho e proteção",
     },
     {
-      image: "/images/animals/cachorro1.jpeg", 
+      image: "/images/animals/cachorro1.jpeg",
       title: "A Solidariedade Começa com um Ato de Amor",
-      subtitle: "Cada vida resgatada merece um futuro melhor. Com sua ajuda, podemos dar um novo lar e uma nova chance para esses animais."
-    },{
-      image: "/images/animals/cachorro3.jpg", 
+      subtitle:
+        "Cada vida resgatada merece um futuro melhor. Com sua ajuda, podemos dar um novo lar e uma nova chance para esses animais.",
+    },
+    {
+      image: "/images/animals/cachorro3.jpg",
       title: "De Coração a Coração: Adoção Responsável",
-      subtitle: "Cada animal merece um lar cheio de amor e cuidado. Conheça nossos resgatados e faça a diferença na vida deles."
+      subtitle:
+        "Cada animal merece um lar cheio de amor e cuidado. Conheça nossos resgatados e faça a diferença na vida deles.",
     },
   ],
   history: {
@@ -56,7 +60,13 @@ export const aboutData = {
   },
   team: {
     title: "Nossa Equipe",
-    members: [{ name: "Marly Tomazeli", role: "Fundadora", image: "/images/team/Marly.jpg" }],
+    members: [
+      {
+        name: "Marly Tomazeli",
+        role: "Fundadora",
+        image: "/images/team/marly.jpg",
+      },
+    ],
   },
   cta: {
     title: "Faça parte dessa história! 🐶",
@@ -66,8 +76,7 @@ export const aboutData = {
   sponsors: [
     {
       name: "Depósito Athayde",
-      description:
-        "Apoia o projeto com doações mensais.",
+      description: "Apoia o projeto com doações mensais.",
       logo: "/images/sponsors/logotipo-depositoathayde.svg",
     },
     {

@@ -12,14 +12,14 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero Section com Carrossel */}
-      <HeroCarouselAbout 
+      <HeroCarouselAbout
         slides={aboutData.heroSlides}
         interval={6000}
         autoPlay={true}
         showControls={true}
         showIndicators={true}
       />
-      
+
       <InstagramFloatingButton />
       <HistoryAbout />
 
@@ -27,7 +27,7 @@ export default function HomePage() {
         <div className="container mx-auto">
           <div className="flex justify-center items-center">
             <div className="relative w-full max-w-4xl h-[630px] rounded-xl overflow-hidden shadow-xl">
-              <GalleryCard 
+              <GalleryCard
                 images={[...aboutVolunteersImages]}
                 interval={6000}
                 className="h-full w-full object-cover"

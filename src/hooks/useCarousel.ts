@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 
 export const useCarousel = (
   slideCount: number,
   autoPlay: boolean = true,
-  interval: number = 5000
+  interval: number = 5000,
 ) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -23,16 +23,19 @@ export const useCarousel = (
     setTimeout(() => setIsTransitioning(false), 700);
   }, [isTransitioning, slideCount]);
 
-  const goToSlide = useCallback((index: number) => {
-    if (isTransitioning || index === currentIndex || slideCount <= 1) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsTransitioning(false), 700);
-  }, [isTransitioning, currentIndex, slideCount]);
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (isTransitioning || index === currentIndex || slideCount <= 1) return;
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsTransitioning(false), 700);
+    },
+    [isTransitioning, currentIndex, slideCount],
+  );
 
   useEffect(() => {
     if (!autoPlay || isPaused || slideCount <= 1) return;
-    
+
     const timer = setInterval(goToNext, interval);
     return () => clearInterval(timer);
   }, [goToNext, interval, isPaused, slideCount, autoPlay]);
@@ -44,6 +47,6 @@ export const useCarousel = (
     setIsPaused,
     goToNext,
     goToPrev,
-    goToSlide
+    goToSlide,
   };
 };

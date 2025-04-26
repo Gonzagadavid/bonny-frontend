@@ -1,14 +1,9 @@
 import { aboutData } from "@/data/about";
-import { aboutVolunteersImages } from "@/data/galleryImages";
-import { GalleryCard } from "@/components/custom/about/galleryCard";
 
 export default function HistoryAbout() {
   return (
     <section className="container mx-auto py-24 px-4 max-w-7xl animate-fade-in">
-      {/* Bloco principal */}
       <div className="flex flex-col gap-16">
-
-        {/* Texto principal */}
         <div className="w-full">
           <h2 className="text-4xl font-bold mb-8 text-amber-600 text-center lg:text-left">
             {aboutData.history?.title}
@@ -26,7 +21,6 @@ export default function HistoryAbout() {
           </div>
         </div>
 
-        {/* Destaques numéricos */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
           {[
             { value: "500+", label: "Animais resgatados" },

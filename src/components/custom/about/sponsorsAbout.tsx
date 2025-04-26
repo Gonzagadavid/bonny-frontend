@@ -8,7 +8,7 @@ export default function SponsorsAbout() {
     <section
       className="relative flex items-center overflow-hidden py-24"
       style={{
-        background: 'radial-gradient(circle, #f4923a 0%, #c03619 100%)',
+        background: "radial-gradient(circle, #f4923a 0%, #c03619 100%)",
       }}
     >
       {/* Padrão de patinhas ao fundo */}
