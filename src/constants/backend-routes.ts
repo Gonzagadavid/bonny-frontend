@@ -6,4 +6,5 @@ export enum BackendRoutes {
   DONATIONS = "/donations",
   FORMS = "/forms",
   FORM_ANSWERS = "/form-answers",
+  CANDIDACY = "/candidacy",
 }

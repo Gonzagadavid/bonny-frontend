@@ -2,6 +2,7 @@ import { BackendRoutes } from "@/constants/backend-routes";
 import { fetcher } from "@/lib/fetcher";
 
 export interface AnimalData {
+  _id: string;
   name: string;
   age: number;
   size: string;

@@ -88,7 +88,6 @@ const Header = () => {
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="flex flex-col items-center space-y-4">
-                {/* QR Code PIX */}
                 <div className="p-2 bg-white rounded-lg border border-gray-200">
                   <Image
                     src="/images/pix-qrcode.png"
@@ -98,8 +97,6 @@ const Header = () => {
                     className="w-full max-w-[200px] h-auto"
                   />
                 </div>
-
-                {/* Chave PIX */}
                 <div className="w-full">
                   <p className="text-sm font-medium text-center mb-2">
                     Chave PIX (Email):
@@ -111,8 +108,6 @@ const Header = () => {
                     <CopyToClipboard text="projetobonny@gmail.com" />
                   </div>
                 </div>
-
-                {/* Informações adicionais */}
                 <div className="text-center text-sm text-gray-600 mt-4">
                   <p>Toda doação nos ajuda a resgatar mais animais!</p>
                   <p className="mt-1">

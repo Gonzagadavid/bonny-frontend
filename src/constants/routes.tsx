@@ -11,6 +11,7 @@ export enum Routes {
   USER_REGISTER = "/register",
   LOGIN = "/login",
   CONTACT = "/contact",
+  FORM_ANSWERS = "/form-answer",
   ADMIN = "/admin",
   ADMIN_USERS = "/admin/users",
   ADMIN_USER_DETAILS = "/admin/users/user-details",
@@ -89,6 +90,10 @@ export const routesInfo: Record<
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.ADMIN_FORM_DETAILS]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
+  [Routes.FORM_ANSWERS]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
