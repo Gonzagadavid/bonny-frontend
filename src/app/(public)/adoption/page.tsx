@@ -5,9 +5,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { listAvailableAnimals } from "./_lib/listAvailableAnimals";
+import { AdoptionButton } from "./_components/adoptionButton";
 
 export default async function AdoptionPage() {
   const availablePets = await listAvailableAnimals();
@@ -39,9 +39,7 @@ export default async function AdoptionPage() {
               <p className="mt-2 text-gray-700">{pet.history}</p>
             </CardContent>
             <CardFooter>
-              <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                Quero Adotar
-              </Button>
+              <AdoptionButton animalId={pet._id} />
             </CardFooter>
           </Card>
         ))}
