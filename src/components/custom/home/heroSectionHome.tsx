@@ -10,14 +10,16 @@ export default function HeroSection() {
       <PawPattern />
 
       {/* Imagem do cachorro */}
-      <div className="absolute left-0 bottom-0 w-1/2 h-full overflow-hidden z-0">
+      <div className="absolute left-0 bottom-0 w-full sm:w-1/2 h-full overflow-hidden z-0">
         <Image
           src="/images/dog-hero2.png"
           alt="Cachorro para adoção"
-          layout="fill"
+          layout="responsive"
+          width={700}  // Largura base da imagem
+          height={200} // Altura base da imagem
           objectFit="cover"
-          objectPosition="left -20%"
-          className="scale-150"
+          objectPosition="center"
+          className="transform transition-transform duration-500 sm:scale-125 md:scale-130 lg:scale-125"
         />
       </div>
 

@@ -8,7 +8,6 @@ export default function AboutSection() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Texto no lado esquerdo */}
           <div className="lg:w-1/2 text-justify">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-amber-600 animate-fade-in">
               O Projeto Bonny
@@ -22,20 +21,20 @@ export default function AboutSection() {
                 cachorrinho resgatado por nossa diretora.
               </p>
 
-              <p className=" animate-fade-in">
+              <p className="animate-fade-in">
                 Resgatamos animais em condições vulneráveis, muitos chegando até
                 nós debilitados e doentes. Eles recebem cuidados veterinários
                 completos incluindo exames, tratamentos e cirurgias quando
                 necessárias.
               </p>
 
-              <p className=" animate-fade-in">
+              <p className="animate-fade-in">
                 Antes da adoção, realizamos entrevistas com os interessados,
                 analisando o perfil tanto do adotante quanto do animal,
                 garantindo uma adaptação harmoniosa.
               </p>
 
-              <blockquote className="relative p-6 mt-8 italic bg-amber-50 rounded-lg border-l-4 border-amber-400 text-amber-800  animate-fade-in">
+              <blockquote className="relative p-6 mt-8 italic bg-amber-50 rounded-lg border-l-4 border-amber-400 text-amber-800 animate-fade-in">
                 <svg
                   className="w-8 h-8 text-amber-400 absolute -top-5 -left-4"
                   fill="currentColor"
@@ -52,18 +51,16 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Imagem no lado direito */}
-          <div className="lg:w-1/2  animate-fade-in">
-            <div className="relative h-full min-h-[550px] rounded-xl overflow-hidden shadow-lg">
+          <div className="lg:w-1/2 flex justify-center animate-fade-in">
+            <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/bonny.svg"
-                alt="Cachorro resgatado pelo Projeto Bonny"
-                fill
+                src="/images/bonny.png"
+                alt="Cachorro resgatado pelo Projeto Bonny" 
+                fill       
                 className="object-cover object-center"
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, (min-width: 1024px) 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
             </div>
           </div>
         </div>
