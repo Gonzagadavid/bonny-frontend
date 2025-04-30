@@ -10,22 +10,22 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const HelpOptions = () => {
   return (
     <div className="w-full bg-[var(--color-light-orange)] relative">
-      {/* Divisor superior estilizado */}
       <div className="w-full h-12 -mb-1 transform">
-        <img
+        <Image
           src="/images/path/waves.svg"
           alt="Divisor decorativo"
+          width={500}
+          height={50}
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Seção principal */}
       <section className="container mx-auto px-4 pb-16">
-        {/* Título da seção */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 mt-6">
             Como Você Pode Ajudar
@@ -36,7 +36,6 @@ const HelpOptions = () => {
           </p>
         </div>
 
-        {/* Grid de opções */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {helpOptions.options.map((option, index) => (
             <Card

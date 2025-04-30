@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { aboutData } from "@/data/about";
 
 export default function CtaEndAbout() {
   return (
-    <section className=" relative bg-[--color-red-orange] text-white py-20 text-center">
-      <div className="absolute top-0 left-0 w-full h-12 -mb-1 transform z-10">
-        <img
+    <section className="relative bg-[--color-red-orange] text-white py-10 text-center">
+      <div className="absolute top-0 left-0 w-full h-10 -mb-1 transform z-10">
+        <Image
           src="/images/path/waves.svg"
           alt="Divisor decorativo"
+          width={500}
+          height={50}
           className="w-full h-full object-cover"
         />
       </div>
