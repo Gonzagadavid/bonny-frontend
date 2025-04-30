@@ -5,3 +5,19 @@ export enum CandidacyStatus {
   APPROVED = "APPROVED",
   CONCLUDED = "CONCLUDED",
 }
+
+export enum DogSize {
+  BIG = "BIG",
+  MEDIUM = "MEDIUM",
+  SMALL = "SMALL",
+}
+
+export enum DogFell {
+  SHORT = "SHORT",
+  LONG = "LONG",
+}
+
+export enum GenderEnum {
+  MALE = "MALE",
+  FEMALE = "FEMALE",
+}
