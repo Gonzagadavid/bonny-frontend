@@ -29,17 +29,7 @@ import FormFieldInput from "@/components/custom/formFieldInput";
 import { ImageUpload } from "@/components/custom/imageUpload";
 import { ProfileImageUpload } from "@/components/custom/profileImageUpload";
 import { createAnimal } from "../_lib/createAnimal";
-
-enum DogSize {
-  BIG = "BIG",
-  MEDIUM = "MEDIUM",
-  SMALL = "SMALL",
-}
-
-enum DogFell {
-  SHORT = "SHORT",
-  LONG = "LONG",
-}
+import { DogFell, DogSize, GenderEnum } from "@/types/enums";
 
 const dogFormSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -49,6 +39,7 @@ const dogFormSchema = z.object({
   }),
   breed: z.string().min(1, "Raça é obrigatória"),
   fellColor: z.string().min(1, "Cor da pelagem é obrigatória"),
+  gender: z.string().min(1, "O gênero do animal obrigatória"),
   fell: z.nativeEnum(DogFell, {
     required_error: "Por favor, selecione um tipo de pelagem",
   }),
@@ -189,6 +180,33 @@ export function DogRegistrationForm() {
                       <SelectItem value={DogSize.SMALL}>Pequeno</SelectItem>
                       <SelectItem value={DogSize.MEDIUM}>Médio</SelectItem>
                       <SelectItem value={DogSize.BIG}>Grande</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 mt-4">
+            <FormField
+              control={form.control}
+              name="gender"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="block mb-5">Gênero</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selecione o gênero" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value={GenderEnum.MALE}>Macho</SelectItem>
+                      <SelectItem value={GenderEnum.FEMALE}>Fêmea</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />

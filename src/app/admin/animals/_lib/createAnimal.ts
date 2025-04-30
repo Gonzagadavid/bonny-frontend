@@ -16,6 +16,7 @@ export interface CreateAnimalData {
   imageProfile: string;
   images: string[];
   available: boolean;
+  gender: string;
 }
 
 export async function createAnimal(

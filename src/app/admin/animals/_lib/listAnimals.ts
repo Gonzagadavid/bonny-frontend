@@ -17,6 +17,7 @@ export interface Animal {
   imageProfile: string;
   images: string[];
   available: boolean;
+  gender: string;
 }
 
 export const listAnimal = async (): Promise<Animal[]> => {

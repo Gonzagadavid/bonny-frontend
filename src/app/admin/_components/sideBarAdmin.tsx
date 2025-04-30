@@ -4,26 +4,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
-  Home,
   PawPrint,
   Heart,
   Users,
   DollarSign,
-  Star,
   LayoutTemplate,
   LetterText,
 } from "lucide-react";
 import { Routes } from "@/constants/routes";
 
 const navigation = [
-  { href: "/admin/dashboard", label: "Dashboard", icon: Home },
   { href: "/admin/animals", label: "Animais", icon: PawPrint },
-  { href: "/admin/adopters", label: "Adotantes", icon: Heart },
+  { href: "/admin/adoptions", label: "Adoções", icon: Heart },
   { href: "/admin/donations", label: "Doações", icon: DollarSign },
   { href: Routes.ADMIN_USERS, label: "Usuários", icon: Users },
-  { href: "/admin/sponsorship", label: "Apadrinhamentos", icon: Star },
-  { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },
   { href: Routes.ADMIN_FORMS, label: "Formulários", icon: LetterText },
+  { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },
 ];
 
 export function Sidebar() {
