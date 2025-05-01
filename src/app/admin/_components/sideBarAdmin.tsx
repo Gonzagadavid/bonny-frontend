@@ -7,7 +7,7 @@ import {
   PawPrint,
   Heart,
   Users,
-  DollarSign,
+  // DollarSign,
   LayoutTemplate,
   LetterText,
 } from "lucide-react";
@@ -16,7 +16,8 @@ import { Routes } from "@/constants/routes";
 const navigation = [
   { href: "/admin/animals", label: "Animais", icon: PawPrint },
   { href: "/admin/adoptions", label: "Adoções", icon: Heart },
-  { href: "/admin/donations", label: "Doações", icon: DollarSign },
+  // TODO: Routine to be defined
+  // { href: "/admin/donations", label: "Doações", icon: DollarSign },
   { href: Routes.ADMIN_USERS, label: "Usuários", icon: Users },
   { href: Routes.ADMIN_FORMS, label: "Formulários", icon: LetterText },
   { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },

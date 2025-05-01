@@ -19,6 +19,7 @@ export enum Routes {
   ADMIN_ANIMALS_REGISTER = "/admin/animals/new",
   ADMIN_FORMS = "/admin/forms",
   ADMIN_FORM_DETAILS = "/admin/forms/form-details",
+  ADMIN_ADOPTION = "/admin/adoptions",
 }
 
 export const routesInfo: Record<
@@ -94,6 +95,10 @@ export const routesInfo: Record<
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.FORM_ANSWERS]: {
+    label: "",
+    permissions: UserRole.VOLUNTEER,
+  },
+  [Routes.ADMIN_ADOPTION]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
