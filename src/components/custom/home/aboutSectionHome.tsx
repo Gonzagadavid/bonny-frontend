@@ -55,8 +55,8 @@ export default function AboutSection() {
             <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/images/bonny.png"
-                alt="Cachorro resgatado pelo Projeto Bonny" 
-                fill       
+                alt="Cachorro resgatado pelo Projeto Bonny"
+                fill
                 className="object-cover object-center"
                 priority
                 sizes="(max-width: 1024px) 100vw, (min-width: 1024px) 50vw"

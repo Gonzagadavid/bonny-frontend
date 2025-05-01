@@ -24,7 +24,7 @@ export function useFilters(pets: Pet[]) {
 
     if (searchName) {
       result = result.filter((pet) =>
-        pet.name.toLowerCase().includes(searchName.toLowerCase())
+        pet.name.toLowerCase().includes(searchName.toLowerCase()),
       );
     }
     if (selectedSize) {
@@ -49,7 +49,9 @@ export function useFilters(pets: Pet[]) {
 
   const sizes = [...new Set(pets.map((pet) => pet.size))];
   const breeds = [...new Set(pets.map((pet) => pet.breed))];
-  const fellColors = [...new Set(pets.map((pet) => pet.fellColor).filter(Boolean))];
+  const fellColors = [
+    ...new Set(pets.map((pet) => pet.fellColor).filter(Boolean)),
+  ];
 
   return {
     searchName,

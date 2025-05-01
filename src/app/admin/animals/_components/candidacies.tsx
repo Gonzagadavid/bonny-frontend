@@ -40,6 +40,7 @@ import { Candidacy } from "../_lib/getCandidacies";
 import { formatDate } from "@/utils/formatDate";
 import { updateCandidacyStatusRequest } from "../_lib/updateCandidacyStatus";
 import { useRouter } from "next/navigation";
+import { Routes } from "@/constants/routes";
 
 interface CandidaciesProps {
   candidacies: Candidacy[];
@@ -208,7 +209,7 @@ export default function Candidacies({ candidacies }: CandidaciesProps) {
                       <div className="flex justify-center">
                         <Button variant="outline" size="sm" asChild>
                           <Link
-                            href={`/user/user-details/${candidacy.user._id}`}
+                            href={`${Routes.ADMIN_USER_DETAILS}/${candidacy.user._id}`}
                           >
                             <User className="mr-2 h-2 w-6" />
                             Ver Perfil

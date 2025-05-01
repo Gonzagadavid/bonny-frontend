@@ -1,20 +1,26 @@
-'use client';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+"use client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 
-export default function ImageGallery({ images, name }: { images: string[]; name: string }) {
+export default function ImageGallery({
+  images,
+  name,
+}: {
+  images: string[];
+  name: string;
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImageSrc, setModalImageSrc] = useState<string>('');
+  const [modalImageSrc, setModalImageSrc] = useState<string>("");
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsModalOpen(false);
       }
     };
-    document.addEventListener('keydown', handleKey);
-    return () => document.removeEventListener('keydown', handleKey);
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
   }, []);
 
   const openModal = (src: string) => {
@@ -31,7 +37,12 @@ export default function ImageGallery({ images, name }: { images: string[]; name:
             className="relative h-48 rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer"
             onClick={() => openModal(img)}
           >
-            <Image src={img} alt={`Imagem do ${name}`} fill className="object-cover rounded-lg" />
+            <Image
+              src={img}
+              alt={`Imagem do ${name}`}
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
         ))}
       </div>

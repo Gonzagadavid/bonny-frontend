@@ -4,14 +4,16 @@ import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { listAvailableAnimals } from "./_lib/listAvailableAnimals";
+import { AnimalData, listAvailableAnimals } from "./_lib/listAvailableAnimals";
 import { PawPattern } from "@/components/custom/background/pawPattern";
 import { AlertTriangle } from "lucide-react";
 import FooterAdoption from "@/components/custom/adoption/footerAdoption";
+import { Button } from "@/components/ui/button";
+import { Routes } from "@/constants/routes";
 
 export default function AdoptionPage() {
-  const [availablePets, setAvailablePets] = useState<any[]>([]);
-  const [filteredPets, setFilteredPets] = useState<any[]>([]);
+  const [availablePets, setAvailablePets] = useState<AnimalData[]>([]);
+  const [filteredPets, setFilteredPets] = useState<AnimalData[]>([]);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const [searchName, setSearchName] = useState("");
@@ -177,7 +179,7 @@ export default function AdoptionPage() {
         {filteredPets.length > 0 ? (
           filteredPets.map((pet, index) => (
             <div
-              key={pet.id}
+              key={pet._id}
               className={`transition-all duration-300 ease-in-out transform ${
                 hoveredCard === index ? "scale-105 shadow-lg" : "scale-100"
               }`}
@@ -220,7 +222,9 @@ export default function AdoptionPage() {
                     asChild
                     className="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors duration-200"
                   >
-                    <Link href={`/adoption/${pet.id}`}>Conheça {pet.name}</Link>
+                    <Link href={`${Routes.ADOPTION}/${pet._id}`}>
+                      Conheça {pet.name}
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>
