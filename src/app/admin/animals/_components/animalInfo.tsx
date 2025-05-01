@@ -31,7 +31,7 @@ export default function AnimalInfo({ animal }: AnimalInfoProps) {
   const [editField, setEditField] = useState<string | null>(null);
   const { register, handleSubmit, reset } = useForm<Partial<Animal>>();
 
-  const handleEdit = (field: string) => {
+  const git = (field: string) => {
     setEditField(field);
     reset({ [field]: animal[field as keyof Animal] });
   };
@@ -83,7 +83,7 @@ export default function AnimalInfo({ animal }: AnimalInfoProps) {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => handleEdit(field as string)}
+              onClick={() => git(field as string)}
               className="h-8 w-8 p-0"
             >
               <Pencil className="h-4 w-4" />
@@ -106,6 +106,9 @@ export default function AnimalInfo({ animal }: AnimalInfoProps) {
             ) : type === "boolean" ? (
               <Switch
                 {...register(field)}
+                onCheckedChange={(value) => {
+                  reset({ ...animal, [field]: value });
+                }}
                 defaultChecked={animal[field] as boolean}
               />
             ) : type === "select" && options ? (
