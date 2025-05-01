@@ -15,7 +15,7 @@ export default function HeroSection() {
           src="/images/dog-hero2.png"
           alt="Cachorro para adoção"
           layout="responsive"
-          width={700}  // Largura base da imagem
+          width={700} // Largura base da imagem
           height={200} // Altura base da imagem
           objectFit="cover"
           objectPosition="center"

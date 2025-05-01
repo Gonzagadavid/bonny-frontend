@@ -10,7 +10,13 @@ import useSWR from "swr";
 import { createCandidacy } from "../_lib/createCandidacy";
 import { toast } from "@/hooks/use-toast";
 
-export const AdoptionButton = ({ animalId }: { animalId: string }) => {
+export const AdoptionButton = ({
+  animalId,
+  animalName,
+}: {
+  animalId: string;
+  animalName: string;
+}) => {
   const session = useSession();
   const route = useRouter();
 
@@ -51,9 +57,9 @@ export const AdoptionButton = ({ animalId }: { animalId: string }) => {
   return (
     <Button
       onClick={onAdoption}
-      className="w-full bg-amber-600 hover:bg-amber-700"
+      className="w-full rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white transition-all duration-300 ease-in-out transform bg-[#f4923a] hover:bg-[#dc7011] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff903c]"
     >
-      Quero Adotar
+      Quero adotar {animalName}
     </Button>
   );
 };

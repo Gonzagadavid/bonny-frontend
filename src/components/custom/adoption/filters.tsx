@@ -1,50 +1,50 @@
-"use client"
+"use client";
 
-import { useRouter, useSearchParams, usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 
 interface FiltersProps {
-  breeds: string[]
-  colors: string[]
-  sizes: string[]
-  genders: string[]
+  breeds: string[];
+  colors: string[];
+  sizes: string[];
+  genders: string[];
 }
 
 export const Filters = ({ breeds, colors, sizes, genders }: FiltersProps) => {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const handleFilterChange = (filterName: string, value: string) => {
-    const params = new URLSearchParams(searchParams.toString())
-    
+    const params = new URLSearchParams(searchParams.toString());
+
     if (value) {
-      params.set(filterName, value)
+      params.set(filterName, value);
     } else {
-      params.delete(filterName)
+      params.delete(filterName);
     }
-    
-    router.push(`${pathname}?${params.toString()}`)
-  }
-  
+
+    router.push(`${pathname}?${params.toString()}`);
+  };
+
   const clearFilters = () => {
-    router.push(pathname)
-  }
+    router.push(pathname);
+  };
 
   return (
     <div className="flex flex-wrap gap-4 mb-8 items-end">
       <div className="w-full md:w-auto">
         <label className="block text-sm font-medium mb-1">Raça</label>
         <Select
-          value={searchParams.get('breed') || ''}
-          onValueChange={(value) => handleFilterChange('breed', value)}
+          value={searchParams.get("breed") || ""}
+          onValueChange={(value) => handleFilterChange("breed", value)}
         >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Todas as raças" />
@@ -63,8 +63,8 @@ export const Filters = ({ breeds, colors, sizes, genders }: FiltersProps) => {
       <div className="w-full md:w-auto">
         <label className="block text-sm font-medium mb-1">Cor</label>
         <Select
-          value={searchParams.get('color') || ''}
-          onValueChange={(value) => handleFilterChange('color', value)}
+          value={searchParams.get("color") || ""}
+          onValueChange={(value) => handleFilterChange("color", value)}
         >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Todas as cores" />
@@ -83,8 +83,8 @@ export const Filters = ({ breeds, colors, sizes, genders }: FiltersProps) => {
       <div className="w-full md:w-auto">
         <label className="block text-sm font-medium mb-1">Porte</label>
         <Select
-          value={searchParams.get('size') || ''}
-          onValueChange={(value) => handleFilterChange('size', value)}
+          value={searchParams.get("size") || ""}
+          onValueChange={(value) => handleFilterChange("size", value)}
         >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Todos os portes" />
@@ -103,8 +103,8 @@ export const Filters = ({ breeds, colors, sizes, genders }: FiltersProps) => {
       <div className="w-full md:w-auto">
         <label className="block text-sm font-medium mb-1">Gênero</label>
         <Select
-          value={searchParams.get('gender') || ''}
-          onValueChange={(value) => handleFilterChange('gender', value)}
+          value={searchParams.get("gender") || ""}
+          onValueChange={(value) => handleFilterChange("gender", value)}
         >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Todos os gêneros" />
@@ -120,13 +120,9 @@ export const Filters = ({ breeds, colors, sizes, genders }: FiltersProps) => {
         </Select>
       </div>
 
-      <Button 
-        variant="outline" 
-        onClick={clearFilters}
-        className="h-10"
-      >
+      <Button variant="outline" onClick={clearFilters} className="h-10">
         Limpar Filtros
       </Button>
     </div>
-  )
-}
+  );
+};
