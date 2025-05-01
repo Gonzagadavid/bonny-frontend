@@ -1,12 +1,14 @@
-import { DonationList } from "../../_components/donationList";
+// import { DonationList } from "../../_components/donationList";
+// import { SponsorshipList } from "../../_components/sponsorshipList";
+// import { listDonationByUser } from "../../_lib/listDonationByUser";
+// import { listSponsorshipByUser } from "../../_lib/listSponsorshipByUser";
+import Candidacies from "../../_components/candidacies";
 import { FormAnswerByUser } from "../../_components/formAnswerByUser";
-import { SponsorshipList } from "../../_components/sponsorshipList";
 import { UserInfo } from "../../_components/userInfo";
+import { getCandidaciesByUser } from "../../_lib/getCandidaciesByUser";
 import { getFormAnswerByUser } from "../../_lib/getFormAnswerByUser";
 import { getFormById } from "../../_lib/getFormById";
 import { getUser } from "../../_lib/getUser";
-import { listDonationByUser } from "../../_lib/listDonationByUser";
-import { listSponsorshipByUser } from "../../_lib/listSponsorshipByUser";
 
 export default async function UserDetails({
   params,
@@ -14,9 +16,12 @@ export default async function UserDetails({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+
+  // TODO: Routines to be defined
+  // const sponsorships = await listSponsorshipByUser(id);
+  // const donations = await listDonationByUser(id);
   const userInfo = await getUser(id);
-  const sponsorships = await listSponsorshipByUser(id);
-  const donations = await listDonationByUser(id);
+  const candidacies = await getCandidaciesByUser(id);
   const formAnswers = await getFormAnswerByUser(id);
   const form = await getFormById(formAnswers?.formVersionId);
 
@@ -28,9 +33,10 @@ export default async function UserDetails({
         </h2>
         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
           <UserInfo user={userInfo} />
-          <SponsorshipList sponsorships={sponsorships} />
-          <DonationList donations={donations} />
           <FormAnswerByUser form={form} formAnswers={formAnswers} />
+          <Candidacies candidacies={candidacies} />
+          {/* <SponsorshipList sponsorships={sponsorships} />
+          <DonationList donations={donations} /> */}
         </div>
       </section>
     </div>
