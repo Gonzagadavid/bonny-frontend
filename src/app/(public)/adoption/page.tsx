@@ -88,7 +88,7 @@ export default function AdoptionPage() {
           </h1>
           <p className="text-lg max-w-2xl mx-auto">
             Cada animal merece um lar amoroso. Conheça nossos animais esperando
-            por uma família. 
+            por uma família.
           </p>
         </div>
       </section>
