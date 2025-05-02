@@ -7,7 +7,6 @@ import CtaEndAbout from "@/app/(public)/about/_components/ctaEndAbout";
 import InstagramFloatingButton from "@/components/custom/instagramFloatingButton";
 import { GalleryCard } from "@/app/(public)/about/_components/galleryCard";
 import { aboutVolunteersImages } from "@/data/galleryImages";
-import FooterAdoption from "../adoption/_components/footerAdoption";
 
 export default function HomePage() {
   return (
@@ -41,7 +40,7 @@ export default function HomePage() {
       <SponsorsAbout />
       <TeamAbout />
       <CtaEndAbout />
-      
+
       <footer className="bg-[#c03619] text-white text-center py-5">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-sm md:text-base">

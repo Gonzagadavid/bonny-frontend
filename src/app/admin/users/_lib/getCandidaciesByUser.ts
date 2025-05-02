@@ -24,11 +24,13 @@ export interface Candidacy {
   user: string;
   dog: Dog;
   status: CandidacyStatus;
+  createdAt: string;
 }
 
 export const getCandidaciesByUser = async (
-  id: string,
+  id?: string,
 ): Promise<Candidacy[]> => {
+  if (!id) return [];
   const candidacies = await fetcher(`${BackendRoutes.CANDIDACY}/by-user/${id}`);
 
   return candidacies;
