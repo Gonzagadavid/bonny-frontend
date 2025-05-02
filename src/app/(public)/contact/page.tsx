@@ -12,9 +12,9 @@ const contactMethods = [
   },
   {
     icon: "📞",
-    title: "Telefone",
-    description: "(11) 98765-4321",
-    action: "Ligue agora",
+    title: "Redes Sociais",
+    description: "@projetobonny",
+    action: "Siga-nos",
   },
   {
     icon: "📍",

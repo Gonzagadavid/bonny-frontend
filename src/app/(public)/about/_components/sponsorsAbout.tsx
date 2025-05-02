@@ -1,5 +1,5 @@
 import { CardHeader, CardContent, CardTitle, Card } from "@/components/ui/card";
-import { PawPattern } from "../background/pawPattern";
+import { PawPattern } from "../../../../components/custom/background/pawPattern";
 import { aboutData } from "@/data/about";
 import Image from "next/image";
 

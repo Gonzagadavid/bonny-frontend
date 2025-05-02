@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ImageGallery from "@/components/custom/adoption/imageGallery";
+import ImageGallery from "@/app/(public)/adoption/_components/imageGalleryAdoption";
 import { getAnimal } from "../_lib/getAnimal";
 import { AdoptionButton } from "../_components/adoptionButton";
 import { Button } from "@/components/ui/button";

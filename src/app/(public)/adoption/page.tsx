@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { AnimalData, listAvailableAnimals } from "./_lib/listAvailableAnimals";
 import { PawPattern } from "@/components/custom/background/pawPattern";
 import { AlertTriangle } from "lucide-react";
-import FooterAdoption from "@/components/custom/adoption/footerAdoption";
+import FooterAdoption from "./_components/footerAdoption";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/constants/routes";
 
@@ -84,11 +84,11 @@ export default function AdoptionPage() {
 
         <div className="relative z-10 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Encontre seu <span className="text-[#e44545]">amigo</span>
+            Encontre seu amigo
           </h1>
           <p className="text-lg max-w-2xl mx-auto">
             Cada animal merece um lar amoroso. Conheça nossos animais esperando
-            por uma família.
+            por uma família. 
           </p>
         </div>
       </section>
