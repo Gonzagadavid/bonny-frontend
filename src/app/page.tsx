@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Header from "@/components/custom/publicHeader";
-import AboutSection from "@/components/custom/home/aboutSectionHome";
-import HeroSection from "@/components/custom/home/heroSectionHome";
-import HelpOptions from "@/components/custom/home/helpOptions";
+import Header from "@/components/custom/header";
+import AboutSection from "@/app/(public)/_components/aboutSectionHome";
+import HeroSection from "@/app/(public)/_components/heroSectionHome";
+import HelpOptions from "@/app/(public)/_components/helpOptions";
 import Footer from "@/components/custom/footer";
 import InstagramFloatingButton from "@/components/custom/instagramFloatingButton";
 

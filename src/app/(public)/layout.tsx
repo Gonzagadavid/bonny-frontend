@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/custom/publicHeader";
+import Header from "@/components/custom/header";
 
 interface PublicLayoutProps {
   children: React.ReactNode;

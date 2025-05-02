@@ -1,6 +1,6 @@
 export default function FooterAdoption() {
   return (
-    <footer className="bg-[#c03619] text-white text-center py-10 mt-12">
+    <footer className="bg-[#c03619] text-white text-center py-10 ">
       <div className="max-w-6xl mx-auto px-4">
         <p className="text-sm md:text-base">
           © {new Date().getFullYear()} Projeto Bonny. Todos os direitos
