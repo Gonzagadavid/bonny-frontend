@@ -1,7 +1,7 @@
 export const aboutData = {
   hero: {
     title: "Quem Somos",
-    subtitle: "Conheça a história por trás do Projeto Bomy",
+    subtitle: "Conheça a história por trás do Projeto Bonny",
     backgroundImage: "/images/about-hero.jpg",
   },
   heroSlides: [

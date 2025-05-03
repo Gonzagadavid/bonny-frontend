@@ -3,8 +3,12 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/utils/formatDate";
 import { UserData } from "../_lib/getUser";
+import { RoleSelect } from "./roleSelect";
+import { auth } from "@/app/api/auth/auth";
+import { UserRole } from "@/constants/permissions";
 
-export function UserInfo({ user }: { user: UserData }) {
+export async function UserInfo({ user }: { user: UserData }) {
+  const session = await auth();
   const initials = user.name
     .split(" ")
     .map((n) => n[0])
@@ -55,6 +59,11 @@ export function UserInfo({ user }: { user: UserData }) {
                 <p className="text-sm text-muted-foreground">ID</p>
                 <p className="font-medium text-xs truncate">{user._id}</p>
               </div>
+              {session?.user.role === UserRole.ADMIN && (
+                <div>
+                  <RoleSelect currentRole={user.role} userId={user._id} />
+                </div>
+              )}
             </div>
           </div>
         </div>

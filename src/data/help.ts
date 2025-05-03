@@ -2,7 +2,7 @@ import { Routes } from "../constants/routes";
 
 export const helpOptions = {
   hero: {
-    title: "Como Ajudar o Projeto Bomy",
+    title: "Como Ajudar o Projeto Bonny",
     subtitle: "Sua contribuição transforma vidas",
     backgroundImage: "/images/help-hero.jpg",
   },
