@@ -33,6 +33,10 @@ const Header = () => {
     !!session.data?.user.role &&
     checkPermissions(UserRole.VOLUNTEER, session.data.user.role);
 
+  if (session.status === "authenticated") {
+    mainRoutes.push(Routes.DASHBOARD);
+  }
+
   if (isAdmin) {
     mainRoutes.push(Routes.ADMIN);
   }

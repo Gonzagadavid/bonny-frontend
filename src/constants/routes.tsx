@@ -3,6 +3,7 @@ import { UserRole } from "./permissions";
 export enum Routes {
   HOME = "/",
   ABOUT = "/about",
+  DASHBOARD = "/dashboard",
   HELP = "/how-to-help",
   ADOPTION = "/adoption",
   DONATIONS = "/donations",
@@ -28,6 +29,10 @@ export const routesInfo: Record<
 > = {
   [Routes.HOME]: {
     label: "Início",
+    permissions: UserRole.USER,
+  },
+  [Routes.DASHBOARD]: {
+    label: "Candidaturas",
     permissions: UserRole.USER,
   },
   [Routes.ABOUT]: {
