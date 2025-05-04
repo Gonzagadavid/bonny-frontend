@@ -11,6 +11,10 @@ import { ChangeEventHandler, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { createForm } from "../_lib/createForm";
 import { toast } from "@/hooks/use-toast";
+import { useSearchParams } from "next/navigation";
+import useSWR from "swr";
+import { BackendRoutes } from "@/constants/backend-routes";
+import { fetcher } from "@/lib/fetcher";
 
 enum AnswerType {
   ALTERNATIVE = "ALTERNATIVE",
@@ -25,6 +29,9 @@ const answerTypeLabel = {
 };
 
 export default function CreateForms() {
+  const searchParams = useSearchParams();
+  const base = searchParams.get("base");
+
   const [form, setForm] = useState<
     {
       id: string;
@@ -48,6 +55,18 @@ export default function CreateForms() {
   const [answerType, setAnswerType] = useState<AnswerType>(
     AnswerType.ALTERNATIVE,
   );
+
+  useSWR(base ? `${BackendRoutes.FORMS}/${base}` : null, fetcher, {
+    onSuccess(data) {
+      setForm(data.questions);
+    },
+    revalidateOnFocus: false,
+    revalidateOnMount: false,
+    revalidateOnReconnect: false,
+    refreshWhenOffline: false,
+    refreshWhenHidden: false,
+    refreshInterval: 0,
+  });
 
   const onChangeTitle: ChangeEventHandler<HTMLInputElement> = ({
     target: { value },
@@ -119,6 +138,7 @@ export default function CreateForms() {
       setAlternatives([]);
       setAlternativeText("");
       setTitle("");
+      setForm([]);
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({

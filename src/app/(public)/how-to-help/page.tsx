@@ -13,7 +13,6 @@ import Footer from "@/components/custom/footer";
 export default function HowToHelpPage() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section
         className="relative h-64 md:h-80 flex items-center justify-center bg-cover bg-center"
         style={{
@@ -31,7 +30,6 @@ export default function HowToHelpPage() {
         </div>
       </section>
 
-      {/* Opções de Ajuda */}
       <section className="container mx-auto py-16 px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {helpOptions.options.map((option, index) => (
@@ -55,42 +53,6 @@ export default function HowToHelpPage() {
         </div>
       </section>
 
-      {/* Formulário de Contato */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Quer ajudar de outra forma?
-          </h2>
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Seu nome"
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Seu e-mail"
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              required
-            />
-            <textarea
-              placeholder="Como gostaria de ajudar?"
-              rows={4}
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              required
-            ></textarea>
-            <Button
-              type="submit"
-              className="w-full bg-amber-600 hover:bg-amber-700"
-            >
-              Enviar Mensagem
-            </Button>
-          </form>
-        </div>
-      </section>
-
-      {/* FAQ */}
       <section className="container mx-auto py-16 px-4 max-w-3xl">
         <h2 className="text-3xl font-bold mb-8 text-center">
           Perguntas Frequentes

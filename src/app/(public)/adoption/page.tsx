@@ -114,7 +114,7 @@ export default function AdoptionPage() {
               <option value="">Porte</option>
               {sizes.map((size, index) => (
                 <option key={index} value={size}>
-                  {size}
+                  {dogSizeLabel?.[size]}
                 </option>
               ))}
             </select>

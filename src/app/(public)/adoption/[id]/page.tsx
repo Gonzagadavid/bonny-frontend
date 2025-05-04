@@ -2,8 +2,8 @@ import Image from "next/image";
 import ImageGallery from "@/app/(public)/adoption/_components/imageGalleryAdoption";
 import { getAnimal } from "../_lib/getAnimal";
 import { AdoptionButton } from "../_components/adoptionButton";
-import { Button } from "@/components/ui/button";
 import { dogFellLabel, dogSizeLabel, genderLabel } from "../_utils/labels";
+import { SponsorshipButton } from "../_components/sponsorshipButton";
 
 export default async function AnimalsDetailsPage({
   params,
@@ -126,9 +126,7 @@ export default async function AnimalsDetailsPage({
                     animalId={animal._id}
                     animalName={animal.name}
                   />
-                  <Button className="w-full rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white transition-all duration-300 ease-in-out transform bg-[#f4923a] hover:bg-[#dc7011] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff903c]">
-                    Quero apadrinhar {animal.name}
-                  </Button>
+                  <SponsorshipButton animalName={animal.name} />
                 </div>
               </div>
             </div>
