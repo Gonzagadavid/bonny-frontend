@@ -10,7 +10,7 @@ import { AlertTriangle } from "lucide-react";
 import FooterAdoption from "./_components/footerAdoption";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/constants/routes";
-import { dogSizeLabel, genderLabel } from "./_utils/labels";
+import { dogSizeLabel, genderLabel } from "../../../constants/labels";
 
 export default function AdoptionPage() {
   const [availablePets, setAvailablePets] = useState<AnimalData[]>([]);

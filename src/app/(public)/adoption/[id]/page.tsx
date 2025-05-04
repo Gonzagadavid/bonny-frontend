@@ -2,7 +2,11 @@ import Image from "next/image";
 import ImageGallery from "@/app/(public)/adoption/_components/imageGalleryAdoption";
 import { getAnimal } from "../_lib/getAnimal";
 import { AdoptionButton } from "../_components/adoptionButton";
-import { dogFellLabel, dogSizeLabel, genderLabel } from "../_utils/labels";
+import {
+  dogFellLabel,
+  dogSizeLabel,
+  genderLabel,
+} from "../../../../constants/labels";
 import { SponsorshipButton } from "../_components/sponsorshipButton";
 
 export default async function AnimalsDetailsPage({

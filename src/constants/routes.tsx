@@ -101,7 +101,7 @@ export const routesInfo: Record<
   },
   [Routes.FORM_ANSWERS]: {
     label: "",
-    permissions: UserRole.VOLUNTEER,
+    permissions: UserRole.USER,
   },
   [Routes.ADMIN_ADOPTION]: {
     label: "",

@@ -2,6 +2,7 @@
 
 import { BackendRoutes } from "@/constants/backend-routes";
 import { fetcher } from "@/lib/fetcher";
+import { DogFell, DogSize, GenderEnum } from "@/types/enums";
 
 interface UserData {
   _id: string;
@@ -17,17 +18,17 @@ interface Dog {
   _id: string;
   name: string;
   age: number;
-  size: string;
+  size: DogSize;
   breed: string;
   fellColor: string;
-  fell: string;
+  fell: DogFell;
   temperament: string;
   situation: string;
   history: string;
   imageProfile: string;
   images: string[];
   available: boolean;
-  gender: string;
+  gender: GenderEnum;
 }
 
 export interface Adoption {

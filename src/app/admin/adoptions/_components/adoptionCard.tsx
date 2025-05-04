@@ -10,9 +10,12 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Trash2 } from "lucide-react";
+import { Check, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { Adoption } from "../_lib/listAdoptions";
+import { dogSizeLabel } from "@/constants/labels";
+import { updateLastCheck } from "../_lib/updateLastCheck";
+import { useRouter } from "next/navigation";
 
 interface AdoptionCardProps {
   adoption: Adoption;
@@ -26,10 +29,16 @@ export default function AdoptionCard({
   const { _id, user, dog, lastCheck, deletedAt } = adoption;
 
   const lastCheckDate = new Date(lastCheck);
+  const router = useRouter();
   const formattedLastCheck = formatDistanceToNow(lastCheckDate, {
     addSuffix: true,
     locale: ptBR,
   });
+
+  const updateCheck = async () => {
+    await updateLastCheck(adoption._id);
+    router.refresh();
+  };
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md">
@@ -54,7 +63,7 @@ export default function AdoptionCard({
           <div>
             <h3 className="font-bold text-lg">{dog.name}</h3>
             <p className="text-sm text-muted-foreground">
-              {dog.breed}, {dog.size}
+              {dog.breed}, Porte {dogSizeLabel?.[dog.size] ?? ""}
             </p>
           </div>
           <div className="text-right">
@@ -75,12 +84,22 @@ export default function AdoptionCard({
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 flex justify-end">
+      <CardFooter className="p-4 pt-0 flex justify-between">
         {!deletedAt && (
-          <Button variant="destructive" size="sm" onClick={() => onDelete(_id)}>
-            <Trash2 className="h-4 w-4 mr-1" />
-            Cancelar adoção
-          </Button>
+          <>
+            <Button variant="default" size="sm" onClick={updateCheck}>
+              <Check className="h-4 w-4 " />
+              Verificado hoje
+            </Button>
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={() => onDelete(_id)}
+            >
+              <Trash2 className="h-4 w-4" />
+              Cancelar adoção
+            </Button>
+          </>
         )}
       </CardFooter>
     </Card>

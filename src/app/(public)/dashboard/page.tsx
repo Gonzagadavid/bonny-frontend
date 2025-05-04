@@ -51,7 +51,7 @@ export default async function DashboardPageUser() {
             jornada aparecerá aqui!
           </CardDescription>
           <Button className="mt-6 gap-2 bg-amber-600 hover:bg-amber-700">
-            Conhecer nossos animais
+            <Link href={Routes.ADOPTION}>Conhecer nossos animais</Link>
             <PawPrint className="h-4 w-4" />
           </Button>
         </CardContent>
