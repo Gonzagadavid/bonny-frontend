@@ -10,6 +10,7 @@ import { AlertTriangle } from "lucide-react";
 import FooterAdoption from "./_components/footerAdoption";
 import { Button } from "@/components/ui/button";
 import { Routes } from "@/constants/routes";
+import { dogSizeLabel, genderLabel } from "./_utils/labels";
 
 export default function AdoptionPage() {
   const [availablePets, setAvailablePets] = useState<AnimalData[]>([]);
@@ -70,14 +71,12 @@ export default function AdoptionPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f4e4d0] to-white">
-      {/* Seção Inicial */}
       <section
         className="relative flex items-center justify-center overflow-hidden py-24"
         style={{
           background: "radial-gradient(circle, #f4923a 0%, #d94545 100%)",
         }}
       >
-        {/* Padrão de patinhas ao fundo */}
         <div className="absolute inset-0 z-0">
           <PawPattern />
         </div>
@@ -93,7 +92,6 @@ export default function AdoptionPage() {
         </div>
       </section>
 
-      {/* Filtros */}
       <section className="max-w-6xl mx-auto px-6 mb-16 -mt-10 relative z-20">
         <div className="bg-white p-6 rounded-2xl shadow-xl border border-[#f4e4d0]">
           <h2 className="text-xl font-semibold text-[#f4923a] mb-4">
@@ -158,7 +156,6 @@ export default function AdoptionPage() {
         </div>
       </section>
 
-      {/* Mensagem de Aviso - Após os filtros */}
       <section className="max-w-6xl mx-auto px-6 mb-8 text-center">
         <div className="flex items-center bg-[#f8d7da] border border-[#f5c6cb] rounded-lg p-4 shadow-lg">
           <AlertTriangle className="h-6 w-6 sm:h-5 sm:w-5 text-[#d42b2b] mr-3" />
@@ -174,7 +171,6 @@ export default function AdoptionPage() {
         </div>
       </section>
 
-      {/* Cartões de Pets */}
       <section className="max-w-6xl mx-auto px-6 pb-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {filteredPets.length > 0 ? (
           filteredPets.map((pet, index) => (
@@ -205,10 +201,11 @@ export default function AdoptionPage() {
                   <div className="text-sm text-neutral-500">
                     <p>
                       {pet.breed} • {pet.age} {pet.age === 1 ? "ano" : "anos"} •{" "}
-                      {pet.gender}
+                      {genderLabel?.[pet.gender] ?? ""}
                     </p>
                     <p>
-                      {pet.fellColor} • {pet.size}
+                      Pelagem {pet.fellColor} • Porte{" "}
+                      {dogSizeLabel?.[pet.size] ?? ""}
                     </p>
                   </div>
 

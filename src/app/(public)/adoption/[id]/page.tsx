@@ -3,6 +3,7 @@ import ImageGallery from "@/app/(public)/adoption/_components/imageGalleryAdopti
 import { getAnimal } from "../_lib/getAnimal";
 import { AdoptionButton } from "../_components/adoptionButton";
 import { Button } from "@/components/ui/button";
+import { dogFellLabel, dogSizeLabel, genderLabel } from "../_utils/labels";
 
 export default async function AnimalsDetailsPage({
   params,
@@ -64,7 +65,9 @@ export default async function AnimalsDetailsPage({
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">Porte</p>
-                  <p className="mt-1 text-sm text-gray-900">{animal.size}</p>
+                  <p className="mt-1 text-sm text-gray-900">
+                    {dogSizeLabel?.[animal.size] ?? ""}
+                  </p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">Raça</p>
@@ -82,7 +85,9 @@ export default async function AnimalsDetailsPage({
                   <p className="text-sm font-medium text-gray-500">
                     Tipo de Pelo
                   </p>
-                  <p className="mt-1 text-sm text-gray-900">{animal.fell}</p>
+                  <p className="mt-1 text-sm text-gray-900">
+                    {dogFellLabel?.[animal.fell] ?? ""}
+                  </p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">
@@ -94,7 +99,9 @@ export default async function AnimalsDetailsPage({
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">Sexo</p>
-                  <p className="mt-1 text-sm text-gray-900">{animal.gender}</p>
+                  <p className="mt-1 text-sm text-gray-900">
+                    {genderLabel?.[animal.gender] ?? ""}
+                  </p>
                 </div>
               </div>
 

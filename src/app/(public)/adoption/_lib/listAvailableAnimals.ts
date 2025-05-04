@@ -1,21 +1,22 @@
 import { BackendRoutes } from "@/constants/backend-routes";
 import { fetcher } from "@/lib/fetcher";
+import { DogFell, DogSize, GenderEnum } from "@/types/enums";
 
 export interface AnimalData {
   _id: string;
   name: string;
   age: number;
-  size: string;
+  size: DogSize;
   breed: string;
   fellColor: string;
-  fell: string;
+  fell: DogFell;
   temperament: string;
   situation: string;
   history: string;
   imageProfile: string;
   images: string[];
   available: boolean;
-  gender: string;
+  gender: GenderEnum;
 }
 
 export const listAvailableAnimals = async (): Promise<AnimalData[]> => {
