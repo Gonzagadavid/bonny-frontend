@@ -44,6 +44,7 @@ export const AdoptionButton = ({
 
         toast({ title: "Candidatura de adoção criada com sucesso!" });
       }
+      route.push(Routes.DASHBOARD);
     } catch {
       toast({
         title: "Erro",

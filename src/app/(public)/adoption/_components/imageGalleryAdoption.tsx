@@ -41,7 +41,7 @@ export default function ImageGallery({
               src={img}
               alt={`Imagem do ${name}`}
               fill
-              className="object-cover rounded-lg"
+              className="object-contain rounded-lg"
             />
           </div>
         ))}

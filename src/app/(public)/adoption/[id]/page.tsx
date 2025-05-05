@@ -28,13 +28,13 @@ export default async function AnimalsDetailsPage({
 
       <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="md:flex">
+          <div className="flex items-center">
             <div className="md:w-1/2 relative h-96 transition-all duration-500 ease-in-out transform hover:scale-105">
               <Image
                 src={animal.imageProfile}
                 alt={animal.name}
                 fill
-                className="object-cover rounded-xl"
+                className="object-contain rounded-xl"
                 priority
               />
             </div>

@@ -31,6 +31,7 @@ import { ProfileImageUpload } from "@/components/custom/profileImageUpload";
 import { createAnimal } from "../_lib/createAnimal";
 import { DogFell, DogSize, GenderEnum } from "@/types/enums";
 import { useRouter } from "next/navigation";
+import { Routes } from "@/constants/routes";
 
 const dogFormSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -134,7 +135,7 @@ export function DogRegistrationForm() {
       form.reset();
       setProfileImageFile(null);
       setAdditionalImageFiles([]);
-      router.refresh();
+      router.push(Routes.ADMIN_ANIMALS);
     } catch (error) {
       console.error("Error submitting form:", error);
       toast({

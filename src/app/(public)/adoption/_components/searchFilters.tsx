@@ -53,7 +53,7 @@ export default function SearchFilters({
         <input
           type="text"
           placeholder="Buscar por nome..."
-          defaultValue={currentFilters.name || ""}
+          value={currentFilters.name || ""}
           onChange={(e) => {
             router.push(
               `/adoption?${createQueryString("name", e.target.value)}`,
@@ -64,7 +64,7 @@ export default function SearchFilters({
 
         <select
           className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-          defaultValue={currentFilters.size || ""}
+          value={currentFilters.size || ""}
           onChange={(e) => {
             router.push(
               `/adoption?${createQueryString("size", e.target.value)}`,
@@ -81,7 +81,7 @@ export default function SearchFilters({
 
         <select
           className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-          defaultValue={currentFilters.breed || ""}
+          value={currentFilters.breed || ""}
           onChange={(e) => {
             router.push(
               `/adoption?${createQueryString("breed", e.target.value)}`,
@@ -98,7 +98,7 @@ export default function SearchFilters({
 
         <select
           className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-          defaultValue={currentFilters.color || ""}
+          value={currentFilters.color || ""}
           onChange={(e) => {
             router.push(
               `/adoption?${createQueryString("color", e.target.value)}`,

@@ -41,7 +41,7 @@ export default async function DashboardPageUser() {
         </CardHeader>
         <CardContent>
           <CardTitle className="mb-2 text-2xl text-[#803033]">
-            Histórico de Adoção
+            Histórico de Candidaturas para Adoção
           </CardTitle>
           <CardDescription className="mb-4 text-base text-[#803033]/80">
             Ainda não encontramos nenhum processo de adoção iniciado por você.
@@ -66,7 +66,7 @@ export default async function DashboardPageUser() {
           <Heart className="h-8 w-8 text-[#ed8931]" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight mt-10 text-[#eb8a34]">
-          Histórico de Adoção
+          Histórico de Candidaturas para Adoção
         </h1>
       </div>
 
