@@ -1,11 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { dogSizeLabel } from "@/constants/labels";
+import { DogSize } from "@/types/enums";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 interface SearchFiltersProps {
-  sizes: string[];
+  sizes: DogSize[];
   breeds: string[];
   fellColors: string[];
   currentFilters: {
@@ -72,7 +74,7 @@ export default function SearchFilters({
           <option value="">Porte</option>
           {sizes.map((size) => (
             <option key={size} value={size}>
-              {size}
+              {dogSizeLabel[size]}
             </option>
           ))}
         </select>
