@@ -5,7 +5,7 @@ const contactMethods = [
   {
     icon: "📧",
     title: "Email",
-    description: "contato@abrigoanimal.com",
+    description: "projetobonny@gmail.com",
     action: "Envie um email",
   },
   {
@@ -17,7 +17,7 @@ const contactMethods = [
   {
     icon: "📍",
     title: "Endereço",
-    description: "Rua dos Animais, 123 - São Paulo/SP",
+    description: "Guaratinguetá, São Paulo, Brasil",
     action: "Ver no mapa",
   },
 ];
