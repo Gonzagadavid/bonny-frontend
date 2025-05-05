@@ -2,7 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { Animal } from "../_lib/listAnimals";
@@ -15,7 +20,14 @@ interface AnimalCardProps {
 
 function AnimalCard({ animal }: AnimalCardProps) {
   return (
-    <Card className="overflow-hidden rounded-md shadow-md cursor-pointer">
+    <Card className="overflow-hidden rounded-md shadow-md cursor-pointer relative">
+      <CardHeader>
+        {animal.available && (
+          <span className="absolute top-2 right-2 inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold text-white transition-all duration-300 ease-in-out transform bg-green-600 hover:bg-green-700 shadow-md hover:scale-105">
+            Disponível
+          </span>
+        )}
+      </CardHeader>
       <AspectRatio ratio={16 / 9}>
         <Image
           src={animal.imageProfile}
