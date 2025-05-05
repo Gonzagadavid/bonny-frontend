@@ -37,5 +37,20 @@ export const helpOptions = {
       question: "Posso doar itens em vez de dinheiro?",
       answer: "Sim! Aceitamos ração, medicamentos, cobertores...",
     },
+    {
+      question: "Como faço para adotar um cachorro?",
+      answer:
+        "Através da plataforma, após o cadastro e o preenchimento do formulário, sua candidatura será analizada.",
+    },
+    {
+      question: "Posso escolher o cachorro que quero adotar?",
+      answer:
+        'O cachorros dispiníveis para adoção são exibidos na página "adoção e apadrinhamento"',
+    },
+    {
+      question: "Quais são os requisitos para adoção?",
+      answer:
+        "Os requisitos são diferente para cada caso, após se candidatar para adoção, analizaremos para encontrar um lar de acordo com o perfil do animalzinho",
+    },
   ],
 };
