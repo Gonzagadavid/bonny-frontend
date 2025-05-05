@@ -5,8 +5,8 @@ import TeamAbout from "@/app/(public)/about/_components/teamAbout";
 import SponsorsAbout from "@/app/(public)/about/_components/sponsorsAbout";
 import CtaEndAbout from "@/app/(public)/about/_components/ctaEndAbout";
 import InstagramFloatingButton from "@/components/custom/instagramFloatingButton";
-import { GalleryCard } from "@/app/(public)/about/_components/galleryCard";
-import { aboutVolunteersImages } from "@/data/galleryImages";
+// import { GalleryCard } from "@/app/(public)/about/_components/galleryCard";
+// import { aboutVolunteersImages } from "@/data/galleryImages";
 
 export default function HomePage() {
   return (
@@ -23,7 +23,7 @@ export default function HomePage() {
       <InstagramFloatingButton />
       <HistoryAbout />
 
-      <section className="relative py-20 flex items-center overflow-hidden bg-[#faebd8] w-full">
+      {/* <section className="relative py-20 flex items-center overflow-hidden bg-[#faebd8] w-full">
         <div className="container mx-auto">
           <div className="flex justify-center items-center">
             <div className="relative w-full max-w-4xl h-[630px] rounded-xl overflow-hidden shadow-xl">
@@ -35,7 +35,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <SponsorsAbout />
       <TeamAbout />
