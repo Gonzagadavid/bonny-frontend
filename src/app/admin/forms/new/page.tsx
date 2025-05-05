@@ -7,12 +7,11 @@ import { Label } from "@/components/ui/label";
 import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Check, X } from "lucide-react";
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEventHandler, useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { createForm } from "../_lib/createForm";
 import { toast } from "@/hooks/use-toast";
 import { useSearchParams } from "next/navigation";
-import useSWR from "swr";
 import { BackendRoutes } from "@/constants/backend-routes";
 import { fetcher } from "@/lib/fetcher";
 
@@ -56,17 +55,15 @@ export default function CreateForms() {
     AnswerType.ALTERNATIVE,
   );
 
-  useSWR(base ? `${BackendRoutes.FORMS}/${base}` : null, fetcher, {
-    onSuccess(data) {
+  const getForm = useCallback(async () => {
+    if (base) {
+      const data = await fetcher(`${BackendRoutes.FORMS}/${base}`);
       setForm(data.questions);
-    },
-    revalidateOnFocus: false,
-    revalidateOnMount: false,
-    revalidateOnReconnect: false,
-    refreshWhenOffline: false,
-    refreshWhenHidden: false,
-    refreshInterval: 0,
-  });
+    }
+  }, []);
+  useEffect(() => {
+    getForm();
+  }, []);
 
   const onChangeTitle: ChangeEventHandler<HTMLInputElement> = ({
     target: { value },

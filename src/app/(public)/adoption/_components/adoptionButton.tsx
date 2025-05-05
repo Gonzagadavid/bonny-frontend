@@ -33,7 +33,7 @@ export const AdoptionButton = ({
       return;
     }
 
-    if (!data) {
+    if (!data || !data?.activeVersion) {
       route.push(Routes.FORM_ANSWERS);
       return;
     }

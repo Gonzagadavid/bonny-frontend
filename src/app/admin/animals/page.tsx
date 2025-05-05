@@ -8,9 +8,9 @@ import AnimalCard from "./_components/animalCard";
 export default async function AnimalsPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const showOnlyAvailable = searchParams.available === "true";
+  const showOnlyAvailable = (await searchParams).available === "true";
   const allAnimals = await listAnimal();
   const animals = showOnlyAvailable
     ? allAnimals.filter((animal) => animal.available === true)
