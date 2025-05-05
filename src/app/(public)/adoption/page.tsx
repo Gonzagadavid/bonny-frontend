@@ -1,73 +1,56 @@
-"use client";
-
-import { Card, CardFooter } from "@/components/ui/card";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { AnimalData, listAvailableAnimals } from "./_lib/listAvailableAnimals";
+import { listAvailableAnimals } from "./_lib/listAvailableAnimals";
 import { PawPattern } from "@/components/custom/background/pawPattern";
 import { AlertTriangle } from "lucide-react";
 import FooterAdoption from "./_components/footerAdoption";
-import { Button } from "@/components/ui/button";
 import { Routes } from "@/constants/routes";
 import { dogSizeLabel, genderLabel } from "../../../constants/labels";
+import SearchFilters from "./_components/searchFilters";
+import PetCard from "./_components/petCard";
+import NoResults from "./_components/noResults";
 
-export default function AdoptionPage() {
-  const [availablePets, setAvailablePets] = useState<AnimalData[]>([]);
-  const [filteredPets, setFilteredPets] = useState<AnimalData[]>([]);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+export default async function AdoptionPage({
+  searchParams: searchParamsPromise,
+}: {
+  searchParams: Promise<{
+    name?: string;
+    size?: string;
+    breed?: string;
+    color?: string;
+  }>;
+}) {
+  const searchParams = await searchParamsPromise;
 
-  const [searchName, setSearchName] = useState("");
-  const [selectedSize, setSelectedSize] = useState("");
-  const [selectedBreed, setSelectedBreed] = useState("");
-  const [selectedColor, setSelectedColor] = useState("");
+  const pets = await listAvailableAnimals();
 
-  useEffect(() => {
-    async function fetchPets() {
-      const pets = await listAvailableAnimals();
-      setAvailablePets(pets);
-      setFilteredPets(pets);
-    }
-    fetchPets();
-  }, []);
+  let filteredPets = [...pets];
 
-  const filterPets = () => {
-    let pets = [...availablePets];
-
-    if (searchName) {
-      pets = pets.filter((pet) =>
-        pet.name.toLowerCase().includes(searchName.toLowerCase()),
-      );
-    }
-    if (selectedSize) {
-      pets = pets.filter((pet) => pet.size === selectedSize);
-    }
-    if (selectedBreed) {
-      pets = pets.filter((pet) => pet.breed === selectedBreed);
-    }
-    if (selectedColor) {
-      pets = pets.filter((pet) => pet.fellColor === selectedColor);
-    }
-
-    setFilteredPets(pets);
-  };
-
-  useEffect(() => {
-    filterPets();
-  }, [searchName, selectedSize, selectedBreed, selectedColor, availablePets]);
-
-  const sizes = [...new Set(availablePets.map((pet) => pet.size))];
-  const breeds = [...new Set(availablePets.map((pet) => pet.breed))];
-  const fellColors = [
-    ...new Set(availablePets.map((pet) => pet.fellColor).filter(Boolean)),
-  ];
-
-  function clearFilters() {
-    setSearchName("");
-    setSelectedSize("");
-    setSelectedBreed("");
-    setSelectedColor("");
+  if (searchParams.name) {
+    filteredPets = filteredPets.filter((pet) =>
+      pet.name.toLowerCase().includes(searchParams.name!.toLowerCase()),
+    );
   }
+
+  if (searchParams.size) {
+    filteredPets = filteredPets.filter((pet) => pet.size === searchParams.size);
+  }
+
+  if (searchParams.breed) {
+    filteredPets = filteredPets.filter(
+      (pet) => pet.breed === searchParams.breed,
+    );
+  }
+
+  if (searchParams.color) {
+    filteredPets = filteredPets.filter(
+      (pet) => pet.fellColor === searchParams.color,
+    );
+  }
+
+  const sizes = [...new Set(pets.map((pet) => pet.size))];
+  const breeds = [...new Set(pets.map((pet) => pet.breed))];
+  const fellColors = [
+    ...new Set(pets.map((pet) => pet.fellColor).filter(Boolean)),
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f4e4d0] to-white">
@@ -93,67 +76,12 @@ export default function AdoptionPage() {
       </section>
 
       <section className="max-w-6xl mx-auto px-6 mb-16 -mt-10 relative z-20">
-        <div className="bg-white p-6 rounded-2xl shadow-xl border border-[#f4e4d0]">
-          <h2 className="text-xl font-semibold text-[#f4923a] mb-4">
-            Filtrar por:
-          </h2>
-          <div className="flex flex-wrap gap-4 items-center">
-            <input
-              type="text"
-              placeholder="Buscar por nome..."
-              value={searchName}
-              onChange={(e) => setSearchName(e.target.value)}
-              className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-            />
-
-            <select
-              className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-              value={selectedSize}
-              onChange={(e) => setSelectedSize(e.target.value)}
-            >
-              <option value="">Porte</option>
-              {sizes.map((size, index) => (
-                <option key={index} value={size}>
-                  {dogSizeLabel?.[size]}
-                </option>
-              ))}
-            </select>
-
-            <select
-              className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-              value={selectedBreed}
-              onChange={(e) => setSelectedBreed(e.target.value)}
-            >
-              <option value="">Raça</option>
-              {breeds.map((breed, index) => (
-                <option key={index} value={breed}>
-                  {breed}
-                </option>
-              ))}
-            </select>
-
-            <select
-              className="border border-[#f4e4d0] rounded-lg p-3 text-sm w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-[#f4923a] transition"
-              value={selectedColor}
-              onChange={(e) => setSelectedColor(e.target.value)}
-            >
-              <option value="">Cor</option>
-              {fellColors.map((color, index) => (
-                <option key={index} value={color}>
-                  {color}
-                </option>
-              ))}
-            </select>
-
-            <Button
-              variant="ghost"
-              className="text-[#f4923a] hover:bg-[#dc7011]/10 text-sm"
-              onClick={clearFilters}
-            >
-              Limpar filtros
-            </Button>
-          </div>
-        </div>
+        <SearchFilters
+          sizes={sizes}
+          breeds={breeds}
+          fellColors={fellColors}
+          currentFilters={searchParams}
+        />
       </section>
 
       <section className="max-w-6xl mx-auto px-6 mb-8 text-center">
@@ -173,74 +101,17 @@ export default function AdoptionPage() {
 
       <section className="max-w-6xl mx-auto px-6 pb-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {filteredPets.length > 0 ? (
-          filteredPets.map((pet, index) => (
-            <div
+          filteredPets.map((pet) => (
+            <PetCard
               key={pet._id}
-              className={`transition-all duration-300 ease-in-out transform ${
-                hoveredCard === index ? "scale-105 shadow-lg" : "scale-100"
-              }`}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <Card className="h-full flex flex-col overflow-hidden bg-white border border-zinc-200 hover:shadow-xl transition-shadow duration-300 rounded-2xl">
-                <div className="h-52 relative">
-                  <Image
-                    src={pet.imageProfile}
-                    alt={`Foto de ${pet.name}`}
-                    fill
-                    className="object-cover rounded-t-2xl"
-                    priority={index < 3}
-                  />
-                </div>
-
-                <div className="flex flex-col flex-grow p-5 space-y-3">
-                  <h2 className="text-lg font-medium text-neutral-800">
-                    {pet.name}
-                  </h2>
-
-                  <div className="text-sm text-neutral-500">
-                    <p>
-                      {pet.breed} • {pet.age} {pet.age === 1 ? "ano" : "anos"} •{" "}
-                      {genderLabel?.[pet.gender] ?? ""}
-                    </p>
-                    <p>
-                      Pelagem {pet.fellColor} • Porte{" "}
-                      {dogSizeLabel?.[pet.size] ?? ""}
-                    </p>
-                  </div>
-
-                  <p className="text-sm text-neutral-600 line-clamp-3">
-                    {pet.history}
-                  </p>
-                </div>
-
-                <CardFooter className="justify-center p-4">
-                  <Button
-                    asChild
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors duration-200"
-                  >
-                    <Link href={`${Routes.ADOPTION}/${pet._id}`}>
-                      Conheça {pet.name}
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
+              pet={pet}
+              genderLabel={genderLabel}
+              dogSizeLabel={dogSizeLabel}
+              routes={Routes}
+            />
           ))
         ) : (
-          <div className="col-span-full flex flex-col items-center justify-center py-12 text-center">
-            <div className="relative w-full max-w-2xl h-96 mb-8">
-              <Image
-                src="/images/path/no-pets-found.svg"
-                alt="Nenhum animal encontrado"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <p className="text-[#f4923a]/70 text-lg text-center">
-              Nenhum animal encontrado com esses critérios.
-            </p>
-          </div>
+          <NoResults />
         )}
       </section>
 
