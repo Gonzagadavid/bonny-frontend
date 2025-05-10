@@ -30,6 +30,7 @@ import FormFieldInput from "@/components/custom/formFieldInput";
 import { cpf } from "cpf-cnpj-validator";
 import { applyDateMask, applyPhoneMask, parseMaskedDate } from "../_lib/masks";
 import { UserRole } from "@/constants/permissions";
+import { ptBR } from "date-fns/locale";
 
 const formSchema = z
   .object({
@@ -193,6 +194,7 @@ export default function RegisterForm() {
                     <Calendar
                       mode="single"
                       selected={field.value}
+                      locale={ptBR}
                       onSelect={(date) => {
                         field.onChange(date);
                         if (date) {
@@ -203,6 +205,18 @@ export default function RegisterForm() {
                         date > new Date() || date < new Date("1900-01-01")
                       }
                       initialFocus
+                      className="w-full p-4"
+                      classNames={{
+                        table: "w-full text-lg", // <-- aqui estiliza a <table>
+                        head_row: "text-muted-foreground",
+                        head_cell: "text-sm font-medium",
+                        row: "text-center",
+                        cell: "h-12 w-12 p-0 text-center text-base",
+                        day: "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                        day_selected:
+                          "bg-primary text-primary-foreground hover:bg-primary/90",
+                        day_today: "bg-muted text-muted-foreground",
+                      }}
                     />
                   </PopoverContent>
                 </Popover>
