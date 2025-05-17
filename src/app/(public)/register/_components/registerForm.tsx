@@ -207,7 +207,7 @@ export default function RegisterForm() {
                       initialFocus
                       className="w-full p-4"
                       classNames={{
-                        table: "w-full text-lg", // <-- aqui estiliza a <table>
+                        table: "w-full text-lg",
                         head_row: "text-muted-foreground",
                         head_cell: "text-sm font-medium",
                         row: "text-center",
