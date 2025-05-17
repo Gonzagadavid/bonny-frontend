@@ -6,7 +6,6 @@ import AdoptionsList from "./_components/adoptionList";
 export default async function AdoptersPage() {
   const adoptions = await listAdoptions();
 
-  console.log(adoptions);
   return (
     <div className="container mx-auto py-12 px-4">
       <section className="mb-16 max-w-5xl mx-auto">

@@ -1,4 +1,17 @@
 import { UserRole } from "./permissions";
+import { ReactNode } from "react";
+
+import {
+  PawPrint,
+  Heart,
+  Users,
+  LayoutTemplate,
+  LetterText,
+  Store,
+  HandHelping,
+  AtSign,
+  MonitorCog,
+} from "lucide-react";
 
 export enum Routes {
   HOME = "/",
@@ -25,27 +38,32 @@ export enum Routes {
 
 export const routesInfo: Record<
   Routes,
-  { label: string; permissions: UserRole }
+  { label: string; permissions: UserRole; icon?: ReactNode }
 > = {
   [Routes.HOME]: {
-    label: "Início",
+    label: "Plataforma",
     permissions: UserRole.USER,
+    icon: <LayoutTemplate />,
   },
   [Routes.DASHBOARD]: {
     label: "Candidaturas",
     permissions: UserRole.USER,
+    icon: <PawPrint />,
   },
   [Routes.ABOUT]: {
     label: "Quem Somos",
     permissions: UserRole.USER,
+    icon: <Store />,
   },
   [Routes.HELP]: {
     label: "Como Ajudar",
     permissions: UserRole.USER,
+    icon: <HandHelping />,
   },
   [Routes.ADOPTION]: {
     label: "Adoção e Apadrinhamento",
     permissions: UserRole.USER,
+    icon: <Heart />,
   },
   [Routes.DONATIONS]: {
     label: "Doações",
@@ -62,6 +80,7 @@ export const routesInfo: Record<
   [Routes.CONTACT]: {
     label: "Contato",
     permissions: UserRole.USER,
+    icon: <AtSign />,
   },
   [Routes.SPONSORSHIP]: {
     label: "Apadrinhamento",
@@ -74,26 +93,30 @@ export const routesInfo: Record<
   [Routes.ADMIN]: {
     label: "Painel Administrativo",
     permissions: UserRole.VOLUNTEER,
+    icon: <MonitorCog />,
   },
   [Routes.ADMIN_USERS]: {
-    label: "",
+    label: "Usuários",
     permissions: UserRole.VOLUNTEER,
+    icon: <Users />,
   },
   [Routes.ADMIN_USER_DETAILS]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.ADMIN_ANIMALS]: {
-    label: "",
+    label: "Animais",
     permissions: UserRole.VOLUNTEER,
+    icon: <PawPrint />,
   },
   [Routes.ADMIN_ANIMALS_REGISTER]: {
     label: "",
     permissions: UserRole.VOLUNTEER,
   },
   [Routes.ADMIN_FORMS]: {
-    label: "",
+    label: "Formulários",
     permissions: UserRole.VOLUNTEER,
+    icon: <LetterText />,
   },
   [Routes.ADMIN_FORM_DETAILS]: {
     label: "",
@@ -104,9 +127,16 @@ export const routesInfo: Record<
     permissions: UserRole.USER,
   },
   [Routes.ADMIN_ADOPTION]: {
-    label: "",
+    label: "Adoções",
     permissions: UserRole.VOLUNTEER,
+    icon: <Heart />,
   },
 };
 
 export const adminRole = [UserRole.ADMIN, UserRole.VOLUNTEER];
+
+// { href: Routes.ADMIN_ANIMALS, label: "Animais", icon: PawPrint },
+// { href: Routes.ADMIN_ADOPTION, label: "Adoções", icon: Heart },
+// { href: Routes.ADMIN_USERS, label: "Usuários", icon: Users },
+// { href: Routes.ADMIN_FORMS, label: "Formulários", icon: LetterText },
+// { href: Routes.HOME, label: "Plataforma", icon: LayoutTemplate },

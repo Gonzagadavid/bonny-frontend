@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { checkPermissions, UserRole } from "@/constants/permissions";
 import { HeartHandshake } from "lucide-react";
 import { DonationModal } from "./donationModal";
+import { DrawerMenu } from "./drawerMenu";
 
 const Header = () => {
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
@@ -40,7 +41,8 @@ const Header = () => {
 
   return (
     <header className="bg-white sticky top-0 z-50 px-4 py-3 shadow-md flex items-center justify-between font-montserrat">
-      <div className="flex items-center mr-6">
+      <DrawerMenu routes={mainRoutes} />
+      <div className="hidden md:flex items-center mr-6">
         <Link href={Routes.HOME}>
           <Image
             src="/images/logotipo-bonny.svg"

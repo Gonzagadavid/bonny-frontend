@@ -42,7 +42,7 @@ export default async function UserDetails({
             );
           })}
         </div>
-        <div className="fixed bottom-10 right-10">
+        <div className="fixed bottom-10 md:right-10 right-0 flex justify-center">
           <Button>
             <Link href={`${Routes.ADMIN_FORMS}/new?base=${id}`}>
               Usar este formulário como base para criar uma nova versão
